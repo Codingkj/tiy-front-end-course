@@ -39,9 +39,9 @@ Using Who.is - Registrant Street: 103 Everittsville Road
 Registrant City: Dudley
 Registrant State/Province: NC
 
-Find the address of a web page with an explanation for what is displayed on this image: https://imgs.xkcd.com/comics/debugger.png
+14. Find the address of a web page with an explanation for what is displayed on this image: https://imgs.xkcd.com/comics/debugger.png
 Ans: https://spikesandwaves.wordpress.com/2013/01/26/ye-olde-quip-about-whether-or-not-the-brain-is-capable-of-understanding-itself/
 (There are quite a few - right click 'use Google to find this image')
 
-When the domain name artemij.com expires?
+15. When the domain name artemij.com expires?
 May 04, 2017
