@@ -41,6 +41,7 @@ Registrant State/Province: NC
 
 14. Find the address of a web page with an explanation for what is displayed on this image: https://imgs.xkcd.com/comics/debugger.png
 Ans: https://spikesandwaves.wordpress.com/2013/01/26/ye-olde-quip-about-whether-or-not-the-brain-is-capable-of-understanding-itself/
+https://xkcd.com/1163/
 (There are quite a few - right click 'use Google to find this image')
 
 15. When the domain name artemij.com expires?
