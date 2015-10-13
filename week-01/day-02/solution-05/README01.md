@@ -1,5 +1,5 @@
  THE TABLE FILE
- ==============
+
 
 <table>
 		<thead>
@@ -17,7 +17,7 @@
   			</tr>
   		</thead>
   			<tr>
-			    <td>Monday</td>h
+			    <td>Monday</td>
 			    <td colspan="3">Class</td>
 			    <td colspan="2">Lunch</td>
 			    <td colspan="4">Lab</td>
@@ -56,16 +56,6 @@
   
 			</table>
 
- |"09:00" |10:00| 11:00 12:00 13:00 14:00 15:00 16:00 17:00
- |-------|:-----:|-----|
- |Monday	|Class |Lunch Lab
- |Tuesday |Class |Lunch Lab
- |Wednesday |Class Lunch Lab
- |Thursday |Class Lunch Lab
- |Friday |Lab Lunch Lab
- |Saturday |Homework
- |Sunday |Homework
-      
 
     		
   			
