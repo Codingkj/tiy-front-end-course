@@ -15,7 +15,7 @@
 			    <td>
 			    	<table>
 			    			<tr>
-			    				<td></td>
+
 			    				<td>4</td>
 			    				<td>5</td>
 			    			</tr>
@@ -27,7 +27,7 @@
 			   	<td>6</td>
 		    	</tr>
 		    	<tr>
-		    		<td></td>
+		    		
 		    		<td colspan="2">9</td>
 		    		<td>10</td>
 		    	</tr>	
