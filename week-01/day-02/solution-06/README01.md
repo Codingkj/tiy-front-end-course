@@ -9,6 +9,7 @@
   		</tr>
   		<tr>
 			<td>3</td>
+			<td>
 			<table>
 			    <tr>
 			    	<table>
@@ -28,6 +29,7 @@
 		    		<td>10</td>
 		    	</tr>	
 			</table>
+			</td>
 			    
          </tr>
 </table>
