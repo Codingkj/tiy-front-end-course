@@ -1,13 +1,7 @@
- 
-      
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	
-		<title> Solution 5: Table</title>
-	</head>
-	<body>
-		<table>
+ THE TABLE FILE
+
+
+<table>
 		<thead>
   			<tr>
   			<td></td>
@@ -61,5 +55,7 @@
 			  </tr>
   
 			</table>
-	</body>
-</html>
+
+
+    		
+  			
