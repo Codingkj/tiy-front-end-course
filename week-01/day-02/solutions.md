@@ -18,6 +18,8 @@ The defining instance is often the first use of a term in a document.
 Problem 2
 
 Explain why do we need <thead>, <tbody> and <tfoot>?
+The <tbody> element defines one or more <tr> element data-rows to be the body of a parent <table> element. This provides additional semantic information for devices such as printers and displays. For instance, <tbody> represents the content which, when longer than a page, will most likely differ for each page printed; while the content of <thead> and <tfoot> will be the same or similar for each page printed. For displays, <tbody> will enable separate scrolling of the <thead>, <tfoot>, and <caption> elements of the same parent <table> element.   Multiple <tbody> elements are permitted.
+
 
 Problem 3
 
@@ -26,6 +28,7 @@ Create a web page (day-02/solution-03/index.html file) that renders this list:
 Milk
 Bread
 Tomatos
+
 Problem 4
 
 Create a web page (day-02/solution-04/index.html file) with the following information structured in a list:
