@@ -28,7 +28,7 @@
 		    	</tr>
 		    	<tr>
 		    		
-		    		<td colspan="2">9</td>
+		    		<td>9</td>
 		    		<td>10</td>
 		    	</tr>	
 			</table>
