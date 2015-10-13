@@ -5,9 +5,8 @@
 		
   			<tr>
   			<td>1</td>
-    		<th>2</th>
+    		<td>2</td>
   			</tr>
-  		
   			<tr>
 			    <td>3</td>
 			    <table>
@@ -18,16 +17,16 @@
 			    			<td>5</td>
 			    		</tr>
 			    		<tr>
-			    			<td>7</td>td>
-			    			<td>8</td>td>
-			    		</tr>tr>
-			    	</table>
-			    		<td>6</td>
-		    		<tr>
-		    			<td>9</td>
-		    			<td>10></td>td>
+			    			<td>7</td>
+			    			<td>8</td>
+			    	</table> 
+			   		<td>6</td>
 		    		</tr>
-		    			</tr>	
+		    		
+		    		<td>9</td>
+		    		<td>10></td>
+		    		</tr>
+		    			
 			    </table>
 			</table>
 
