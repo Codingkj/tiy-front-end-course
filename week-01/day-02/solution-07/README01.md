@@ -16,20 +16,19 @@
 			    	<table>
 			    			<tr>
 
-			    				<td>4</td>
-			    				<td>5</td>
+			    				<td colspan="1">4</td>
+			    				<td colspan="1">5</td>
 			    			</tr>
 			    			<tr>
-			    				<td>7</td>
-			    				<td>8</td>
+			    				<td colspan="1">7</td>
+			    				<td colspan="1">8</td>
 			    			</tr>
 			    	</table> 
 			   	<td rowspan="2">6</td>
 		    	</tr>
 		    	<tr>
-		    		
-		    		<td colspan="2">9</td>
-		    		<td>10</td>
+		    		<td colspan="1">9</td>
+		    		<td colspan="1">10</td>
 		    	</tr>	
 			</table>
 			</td>
