@@ -23,12 +23,12 @@
 			    		</table> 
 			   			<td>6</td>
 		    		</tr>
-		    		
-			    </table>
-			    <tr>
+		    		<tr>
 		    			<td>9</td>
 		    			<td>10></td>
-		    		</tr>
+		    		</tr>	
+			    </table>
+			    
          </tr>
 </table>
 
