@@ -8,7 +8,7 @@
     		<td colspan="3">2</td>
   		</tr>
   		<tr>
-			<td>3</td>
+			<td rowspan="3">3</td>
 			<td>
 			<table>
 			    <tr>
@@ -24,11 +24,11 @@
 			    				<td>8</td>
 			    			</tr>
 			    	</table> 
-			   	<td>6</td>
+			   	<td rowspan="2">6</td>
 		    	</tr>
 		    	<tr>
 		    		
-		    		<td>9</td>
+		    		<td colspan="2">9</td>
 		    		<td>10</td>
 		    	</tr>	
 			</table>
