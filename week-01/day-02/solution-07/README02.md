@@ -13,7 +13,7 @@
 			<td colspan="1">5</td>
 			<td rowspan="2">6</td>
 		</tr>
-		<td>
+		<tr>
 			<td>7</td>
 			<td>8</td>
 		</tr>
