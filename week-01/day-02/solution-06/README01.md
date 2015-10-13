@@ -5,7 +5,7 @@
 		
   		<tr>
   			<td>1</td>
-    		<td>2</td>
+    		<td colspan="2">2</td>
   		</tr>
   		<tr>
 			<td>3</td>
