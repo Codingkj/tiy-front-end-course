@@ -1,13 +1,7 @@
- 
-      
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	
-		<title> Solution 5: Table</title>
-	</head>
-	<body>
-		<table>
+ THE TABLE FILE
+ ==============
+
+<table>
 		<thead>
   			<tr>
   			<td></td>
@@ -23,7 +17,7 @@
   			</tr>
   		</thead>
   			<tr>
-			    <td>Monday</td>
+			    <td>Monday</td>h
 			    <td colspan="3">Class</td>
 			    <td colspan="2">Lunch</td>
 			    <td colspan="4">Lab</td>
@@ -61,5 +55,17 @@
 			  </tr>
   
 			</table>
-	</body>
-</html>
+
+ |"09:00" |10:00| 11:00 12:00 13:00 14:00 15:00 16:00 17:00
+ |-------|:-----:|-----|
+ |Monday	|Class |Lunch Lab
+ |Tuesday |Class |Lunch Lab
+ |Wednesday |Class Lunch Lab
+ |Thursday |Class Lunch Lab
+ |Friday |Lab Lunch Lab
+ |Saturday |Homework
+ |Sunday |Homework
+      
+
+    		
+  			
