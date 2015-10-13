@@ -14,8 +14,8 @@
 			<td rowspan="2">6</td>
 		</tr>
 		<td>
-			<td colspan="1">7</td>
-			<td colspan="1">8</td>
+			<td>7</td>
+			<td>8</td>
 		</tr>
 		<tr>
 			<td colspan="2">9</td>
