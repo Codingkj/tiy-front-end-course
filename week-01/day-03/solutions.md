@@ -13,7 +13,7 @@ body header p#introduction.important {
   color: red;
   font-size: 150%;
 }
-ANS: 
+ANS: 112 (one class, one id and two elements)
 
 Problem 3
 What is the specificity of this selector:
@@ -22,7 +22,7 @@ body p p p .welcome.back {
   background-color: blue;
   color: white;
 }
-ANS: 
+ANS: 4 Elements, 2 classes = 24
 
 Problem 4
 What's wrong with this CSS rule?
@@ -30,7 +30,7 @@ What's wrong with this CSS rule?
 p {
   color: rgba(277, 60, 0, 0);
 }
-ANS: 
+ANS: First number has a max value of 255.
 
 Problem 5
 Research and explain the difference between em and rem units.
