@@ -5,11 +5,10 @@ body .warning {
   background-color: orange;
   border: 1px solid rgb(0, 0, 0);
 }
-ANS: Background orange with a thin black border (1 pixel) for a class of warning.
+ANS: 11. (10 for class plus 1 for Element) Background orange with a thin black border (1 pixel) for a class of warning.
 
 Problem 2
 What is the specificity of this selector:
-
 body header p#introduction.important {
   color: red;
   font-size: 150%;
