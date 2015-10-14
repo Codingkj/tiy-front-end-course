@@ -55,11 +55,11 @@
 	<h3> To book a visit to the Shard please: </h3>
 		<form >
   			Enter a date after 2016-01-01:
-  			<input type="date" name="vday" min="2016-01-01"><br>
+  			<input required type="date" name="vday" min="2016-01-01"><br>
   			Enter a date before 2017-01-01:
   			<input type="date" name="vday" max="2017-01-01"><br>
   			The floor you wish to visit?
-  			<input type="text" name="floor" ><br>
+  			<input required type="text" name="floor" ><br>
   			Will you attend a restaurant?
   			<input type= name="restaurant"><br>
   			If so, which one?<br>
@@ -67,9 +67,9 @@
   			How many children in your party?
   			<input name="children"><br>
   			Your contact phone number:
-  			<input type="number" name="phone"><br>
+  			<input type="tel" name="phone"><br>
   			Your email
-  			<input name="email" placeholder="Eg. yourname@gmail.com" size="40"><br>
+  			<input required name="email" placeholder="Eg. yourname@gmail.com" size="40"><br>
   			<button>Submit</button>
 		</form>
 		<br>
