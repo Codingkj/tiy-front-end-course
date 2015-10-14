@@ -1,6 +1,60 @@
 body {
-	color: blue;
+	color: black;
 }
 h2 {
 	text-align: center;
 }
+#cover {
+	background-image: url(shard1.jpeg);
+	height: 350px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
+}
+
+h1.title{
+	text-align: center;
+	color: yellow;
+	margin-top: 10px;
+	font-size: 48px;
+}
+.framedpic{
+	margin-left: 50px;
+	margin-top: 50px;
+	border-width: 2px;
+	border-color: #0000FF;
+	border-style: solid;
+	padding: 10px;
+}
+
+.captionfont{
+	font-family: Arial;
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 40px;
+}
+.centred-form{
+	text-align: left;
+	margin-left: 100px;
+	padding-bottom: 10px;
+	border-width: 2px;
+	border-color: #FFFFFF;
+	border-style: solid;
+	padding: 10px;
+}
+.tenant-table, th, td{
+	font-family: Arial;
+	font-size: 15x;
+	table-layout: fixed;
+	border-style: solid;
+	border-collapse: collapse;
+}
+th, td{
+    padding: 5px;
+    text-align: left;
+    width: 140px;
+    }
+ 
+
+
+
