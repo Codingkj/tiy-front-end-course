@@ -3,6 +3,8 @@ body {
 }
 h2 {
 	text-align: center;
+	margin-right: 100px;
+	margin-left: 100px;
 }
 #cover {
 	background-image: url(shard1.jpeg);
@@ -18,20 +20,33 @@ h1.title{
 	margin-top: 10px;
 	font-size: 48px;
 }
-.framedpic{
+.framedportraitpic{
 	margin-left: 50px;
 	margin-top: 50px;
+	margin-right: 50px;
 	border-width: 2px;
 	border-color: #0000FF;
 	border-style: solid;
 	padding: 10px;
+	width:185px;
+	float:left;
 }
-
+.framedlandscapepic{
+	margin-left: 50px;
+	margin-top: 10px;
+	margin-right: 50px;
+	border-width: 2px;
+	border-color: #0000FF;
+	border-style: solid;
+	padding: 10px;
+	width:293px;
+	float:right;
+}
 .captionfont{
 	font-family: Arial;
 	font-size: 12px;
 	font-style: italic;
-	margin-left: 40px;
+
 }
 .centred-form{
 	text-align: left;
@@ -54,6 +69,29 @@ th, td{
     text-align: left;
     width: 140px;
     }
+.funding-text{
+	margin-left: 150px;
+	margin-right:150px;
+	padding-left: 50px;
+}
+.fact-style{
+	width: 500px;
+	clear:both;
+}
+
+dd {
+	text-align: justify;
+	margin-left: 300px;
+	color: #0000FF;
+}
+dt {
+	text-align: left;
+	margin-left: 150px;
+}
+p{
+	margin-right:100px;
+	margin-left:100px;
+}
  
 
 

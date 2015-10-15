@@ -6,7 +6,7 @@
 		<!--link to CSS-->
 		<link rel="stylesheet" type="text/css" href="style.css">
 	
-		<title> Solution 13: Shard File</title>
+		<title> Day 4: Shard File</title>
 		
 	</head>
 	<body>
@@ -25,39 +25,41 @@
 	In July 2002, the then-Deputy Prime Minister, John Prescott, ordered a planning inquiry after the development plans for the Shard were opposed by the Commission for Architecture and the Built Environment and several heritage bodies, including the Royal Parks Foundation and English Heritage.[23][24] The inquiry took place in April and May 2003,[11][25] and on 19 November 2003, the Office of the Deputy Prime Minister announced that planning consent had been approved.
 	</p>
 
-	<figure >
-		<img src="shard_plan_2.jpeg" alt="a half-built shard with incomplete top" class="framedpic">
+	<figure class="framedportraitpic">
+		<img src="shard_plan_2.jpeg" alt="a half-built shard with incomplete top" >
 			<figcaption class="captionfont">
     		Fig 1: Nearing completion of the tower
     		</figcaption>
   	</figure>
 
-	<h2>Funding the Shard</h2>
-	<p>In late 2007, the gathering uncertainty in the global financial markets sparked concerns about the viability of the Shard. However, in January 2008, Sellar announced that it had secured funding from a consortium of Qatari investors, who had paid £150 million to secure an 80% stake in the project. The consortium included Qatar National Bank, QInvest, Qatari Islamic Bank and the Qatari property developer Barwa Real Estate, as well as Sellar Property. The deal involved a buyout of the Halabi and CLS Holdings stakes, and part of the Sellar Property stake.</p>
-
-	<figure>
-	<img src="shard_height.jpeg" alt="graphic showing relative height" class="framedpic">
+	
+	<figure class="framedlandscapepic">
+	<img src="shard_height.jpeg" alt="graphic showing relative height">
 		<figcaption class="captionfont">
 		Fig 2: A comparison with other notable buildings
 		</figcaption>
 	</figure>
 
-	<br>
-	<br>
+<h2>Funding the Shard</h2>
+	<p class="funding-text">In late 2007, the gathering uncertainty in the global financial markets sparked concerns about the viability of the Shard. However, in January 2008, Sellar announced that it had secured funding from a consortium of Qatari investors, who had paid £150 million to secure an 80% stake in the project. The consortium included Qatar National Bank, QInvest, Qatari Islamic Bank and the Qatari property developer Barwa Real Estate, as well as Sellar Property. The deal involved a buyout of the Halabi and CLS Holdings stakes, and part of the Sellar Property stake.The new owners promised to provide the first tranche of finance, allowing construction of the tower to begin. In 2009, the State of Qatar consolidated its ownership of London Bridge Quarter, including the Shard, through the purchase of the private Qatari investors' stakes. London Bridge Quarter is today jointly owned by the State of Qatar and Sellar Property</p>
+
 
 
 <!--Put all the facts here early on as frequently edited-->
-<p id="factoids" >
-<h3>Here are THE FACTS</h3>
+<div class="fact-style" id="factoids" >
+<br>
+<br>
+<h2>Here are THE FACTS</h2>
 <dl > 
 	<dt>Floor count</dt><dd>87</dd>
 	<dt>Number of elevators</dt><dd>44</dd>
 	<dt>Floor area</dt><dd>110,000m<sup>2</sup>
-	<dt>Construction started in...</dt><dd>March 2009</dd>
+	<dt>Construction started in</dt><dd>March 2009</dd>
 	<dt>Architect</dt><dd>Renzo Piano</dd>
-	<dt>Construction completed in...</dt><dd>Judly 2012</dd>
+	<dt>Construction completed in</dt><dd>July 2012</dd>
 </dl>
 <br>
+</div>
 
 
 <!-- Create a search box -->
@@ -79,12 +81,14 @@
   			Enter a date before 2017-01-01:
   			<input type="date" name="vday" max="2017-01-01"><br>
   			The floor you wish to visit?
-  			<input required type="text" name="floor" ><br><br>
-  			Will you attend a restaurant?
-  			<input type="text" name="restaurant"><br><br>
-  			If so, which one?<br>
+  			<input required type="text" name="floor" min="1" max="87"><br><br>
   		</form>
-  		<form action="get" method="post">
+  		<form action="" method="post">Will you attend a restaurant?
+  				<input type="radio" name="restaurant" value="Yes" selected="selected" /> Yes
+  				<input type="radio" name="restaurant" value="No" /> No
+ 		</form>
+  			
+  		<form action="get" method="post">If so, which one?<br>
   				<input type="checkbox" name="restaurant" value="GONG" /> GONG
   				<input type="checkbox" name="restaurant" value="Aqua" /> Aqua
   				<input type="checkbox" name="restaurant" value="Bennys" /> Benny's
