@@ -116,6 +116,7 @@ for (var i=0;i<myArray.length;i++){
    }
 }
 console.log(newArray);
+return(newArray);
 }
 
 filterList(); // returns: []
@@ -128,11 +129,11 @@ _____________________________________________________________
 
 Write iterateList function that takes an array and a function and for each item in that array it calls the function and passes array's item as a parameter.
 
-function iterateList(myArray,f){
+function iterateList(myArray,myFunction){
   
 
   for (var i=0;i<myArray.length;i++){
-    f(myArray[i]);
+    myFunction(myArray[i]);
      
   } 
 }
