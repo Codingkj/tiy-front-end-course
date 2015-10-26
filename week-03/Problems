@@ -49,7 +49,8 @@ function findInList(str1, ch1){
             instances=instances+1;
         } 
     }
-  } 
+  }
+   
   console.log(instances);
   return(instances);
 }
@@ -65,12 +66,30 @@ _____________________________________________
 
 Write squareList function that takes an array of numbers and returns a new array where each number is squared.
 
+function squareList(input){
+
+var newArray=[];
+if (typeof(input)==='object') {
+for (var i=0;i<input.length;i++){
+  newArray[i]=input[i]*input[i];
+}
+}
+console.log(newArray);
+}
+
+squareList(); // returns: []
+squareList([]); // returns: []
+squareList([2]); // returns: [4]
+squareList([2, 4, 1]); // returns: [4, 16, 1]
+
+Version 2:
 function squareList(myArray){
 
 var squaredArray=[];
-if (input != null) {
-for (var i=0;i<myArray.length;i++){
-  squaredArray[i]=myArray[i]*myArray[i];
+  
+if (typeof(myArray)==='object') {
+  for (var i=0;i<myArray.length;i++){
+    squaredArray[i]=myArray[i]*myArray[i];
 	}
 }
 console.log(squaredArray);
@@ -82,21 +101,19 @@ squareList([]); // returns: []
 squareList([2]); // returns: [4]
 squareList([2, 4, 1]); // returns: [4, 16, 1]
 
-
-
 ________________________________________________
 
 Write filterList function that takes an array of any values and returns a new array with only non-empty strings.
 
-ffunction filterList(input){
+function filterList(myArray){
 
 var newArray=[];
-if (input != null){
-for (var i=0;i<input.length;i++){
-  if (typeof(input[i])==='string'){ 
-    newArray.push(input[i]);
-    
-}}
+if (typeof(myArray)==='object'){
+for (var i=0;i<myArray.length;i++){
+  if ((typeof(myArray[i])==='string') &&(myArray[i].length>0)){ 
+    newArray.push(myArray[i]);
+    }
+   }
 }
 console.log(newArray);
 }
@@ -105,6 +122,7 @@ filterList(); // returns: []
 filterList([]); // returns: []
 filterList(['', 78]); // returns: []
 filterList([37, 'Welcome', [], 'back']); // returns: ['Welcome', 'back']
+
 
 _____________________________________________________________
 
