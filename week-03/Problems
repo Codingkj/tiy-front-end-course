@@ -1,0 +1,179 @@
+Problems
+
+1. Make sure variable message is defined in a private scope:
+var message = 'Welcome!';
+
+ANS:
+function(){
+	var message='Welcome!';
+}
+(Now its in the scope of the anonymous function.
+
+
+__________________________________________________________________
+
+2. Write validate Parameter function that takes a parameter, checks whether it's type is string and length is greater than 0.
+
+function xx(input){
+	if (typeof(input==='string') && (input.length>0)) {
+	console.log (input);
+	}
+}
+xx('text');
+xx(5);
+xx("Who's a pretty boy then?");
+
+How to test:
+
+validateParameter(); // returns: false
+validateParameter(''); // returns: false
+validateParameter(5); // returns: false
+validateParameter('Welcome'); // returns: true
+
+
+
+________________________________________________________
+
+ Write findInList function that takes 2 parameters: a string and a character and returns a number of times that character is repeated in that string.
+
+function findInList(str1, ch1){
+  var instances=0;
+  if (str1==null){
+    console.log('There are no strings');
+  }
+  if (typeof(str1)==='string') {
+    var lowerstr=str1.toLowerCase();
+    for (var i=0; i<lowerstr.length;i++){
+        if (lowerstr[i]===ch1) {
+            instances=instances+1;
+        } 
+      //console.log(lowerstr, instances);
+      //console.log(instances);
+    }
+    console.log(str1,ch1);
+    console.log(instances);
+    return(instances);
+    }
+  //else {
+    //console(str1,ch1);
+    //console.log(instances);
+  //}
+}
+findInList('', 'a'); // returns: 0
+findInList('Hello', 'a'); // returns: 0
+findInList('Again', 'a'); // returns: 2
+findInList(); // returns: 0
+findInList(''); // returns: 0
+
+
+_____________________________________________
+
+Write squareList function that takes an array of numbers and returns a new array where each number is squared.
+
+function squareList(input){
+
+var newArray=[];
+if (input != null) {
+for (var i=0;i<input.length;i++){
+  newArray[i]=input[i]*input[i];
+}
+}
+console.log(newArray);
+}
+
+squareList(); // returns: []
+squareList([]); // returns: []
+squareList([2]); // returns: [4]
+squareList([2, 4, 1]); // returns: [4, 16, 1]
+
+
+
+________________________________________________
+
+Write filterList function that takes an array of any values and returns a new array with only non-empty strings.
+
+function filterList(input){
+
+var newArray=[];
+if (input != null) {
+for (var i=0;i<input.length;i++){
+  if (typeof(input[i])==='string'){ 
+    console.log(input[i]);
+    newArray.push =input[i];
+    console.log(newArray);
+}}
+}
+console.log(newArray);
+}
+
+filterList(); // returns: []
+filterList([]); // returns: []
+filterList(['', 78]); // returns: []
+filterList([37, 'Welcome', [], 'back']); // returns: ['Welcome', 'back']
+
+
+_____________________________________________________________
+
+Write iterateList function that takes an array and a function and for each item in that array it calls the function and passes array's item as a parameter.
+
+function iterateList(myArray,f){
+  
+
+  for (var i=0;i<myArray.length;i++){
+    f(myArray[i]);
+     
+  } 
+}
+iterateList([1, 2, 3, 4, 5], function (listItem) {
+  console.log(listItem);
+});
+
+___________________________________________________________________
+
+
+
+Write add function that adds two numbers, but it needs to be called twice for that.
+
+total=0;
+function add(arg1){
+
+  count=0;
+  
+  if (count < 2) {
+    total=total+arg1;
+    count++;
+  }
+ console.log(total);
+}
+
+var add5 = add(5);
+var sum = add(10); // returns: 15
+
+______________________________________________________________
+
+Given this HTML, add first class to the first element in the list and last class to the last element in the list:
+
+<ul>
+  <li class="first">London</li>
+  <li>Paris</li>
+  <li>Tokyo</li>
+  <li class="last">New York</li>
+</ul>
+
+//Or li:firstchild li:lastchild
+//or without changing the HTML directly?
+
+______________________________________________________________
+
+
+Replace content of the element with latest id to Monday is finally here., where Monday is strong:
+
+<div>
+  <p id="latest"><strong>Friday</strong> is finally here.</p>
+  <p>In addition the weather is sunny today.</p>
+</div>
+
+if id==="latest" {
+	text = <strong>Monday</strong> is finally here
+}
+
