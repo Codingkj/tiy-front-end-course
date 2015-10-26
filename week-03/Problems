@@ -17,8 +17,11 @@ __________________________________________________________________
 function xx(input){
 	if (typeof(input==='string') && (input.length>0)) {
 	console.log (input);
+	return true;
 	}
+	return false;
 }
+
 xx('text');
 xx(5);
 xx("Who's a pretty boy then?");
@@ -38,27 +41,19 @@ ________________________________________________________
 
 function findInList(str1, ch1){
   var instances=0;
-  if (str1==null){
-    console.log('There are no strings');
-  }
-  if (typeof(str1)==='string') {
-    var lowerstr=str1.toLowerCase();
+  
+  if ((typeof(str1)==='string')&& (typeof(ch1)==='string')) {
+    var lowerstr=str1.toLowerCase(); 
     for (var i=0; i<lowerstr.length;i++){
         if (lowerstr[i]===ch1) {
             instances=instances+1;
         } 
-      //console.log(lowerstr, instances);
-      //console.log(instances);
     }
-    console.log(str1,ch1);
-    console.log(instances);
-    return(instances);
-    }
-  //else {
-    //console(str1,ch1);
-    //console.log(instances);
-  //}
+  } 
+  console.log(instances);
+  return(instances);
 }
+
 findInList('', 'a'); // returns: 0
 findInList('Hello', 'a'); // returns: 0
 findInList('Again', 'a'); // returns: 2
@@ -204,6 +199,9 @@ function mergeArrays(a1,b1){
 
 mergeArrays(['a','b','c'],[1,2,3]);
 ______________________________________________________________
+STOP *******
+----------------------------------------------------------
+
 
 Given this HTML, add first class to the first element in the list and last class to the last element in the list:
 
