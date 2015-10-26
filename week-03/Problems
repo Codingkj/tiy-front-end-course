@@ -65,15 +65,16 @@ _____________________________________________
 
 Write squareList function that takes an array of numbers and returns a new array where each number is squared.
 
-function squareList(input){
+function squareList(myArray){
 
-var newArray=[];
+var squaredArray=[];
 if (input != null) {
-for (var i=0;i<input.length;i++){
-  newArray[i]=input[i]*input[i];
+for (var i=0;i<myArray.length;i++){
+  squaredArray[i]=myArray[i]*myArray[i];
+	}
 }
-}
-console.log(newArray);
+console.log(squaredArray);
+return(squaredArray);
 }
 
 squareList(); // returns: []
