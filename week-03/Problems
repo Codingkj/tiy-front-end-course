@@ -131,7 +131,6 @@ Write iterateList function that takes an array and a function and for each item 
 
 function iterateList(myArray,myFunction){
   
-
   for (var i=0;i<myArray.length;i++){
     myFunction(myArray[i]);
      
@@ -180,6 +179,16 @@ console.log(total);
 var add5 = add(5);
 var sum = add5(10); // returns: 15
 
+Version 3:
+
+function add(arg1){
+	return function (arg2){
+	return(arg1+arg2);
+	};
+}
+var add5 = add(5);
+var sum = add5(10); // returns: 15
+console.log(sum);
 ______________________________________________________________
 
 
@@ -191,7 +200,6 @@ var message = (function () {
   function getMessage(message) {
     return message;
   }
-
   return {
     getMessage: getMessage
   };
