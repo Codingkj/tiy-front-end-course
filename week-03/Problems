@@ -92,15 +92,14 @@ ________________________________________________
 
 Write filterList function that takes an array of any values and returns a new array with only non-empty strings.
 
-function filterList(input){
+ffunction filterList(input){
 
 var newArray=[];
-if (input != null) {
+if (input != null){
 for (var i=0;i<input.length;i++){
   if (typeof(input[i])==='string'){ 
-    console.log(input[i]);
-    newArray.push =input[i];
-    console.log(newArray);
+    newArray.push(input[i]);
+    
 }}
 }
 console.log(newArray);
@@ -110,7 +109,6 @@ filterList(); // returns: []
 filterList([]); // returns: []
 filterList(['', 78]); // returns: []
 filterList([37, 'Welcome', [], 'back']); // returns: ['Welcome', 'back']
-
 
 _____________________________________________________________
 
@@ -148,6 +146,25 @@ function add(arg1){
 
 var add5 = add(5);
 var sum = add(10); // returns: 15
+
+Version 2:
+
+
+total=0;
+function add(arg1){
+	total=total+arg1;
+    console.log("step1",total);
+   	function add5 (arg2)
+        {total=total+arg2;
+        console.log(total);}
+   	return (add5);
+   	}
+console.log(total);
+ 
+ 
+var add5 = add(5);
+var sum = add5(10); // returns: 15
+
 
 ______________________________________________________________
 
