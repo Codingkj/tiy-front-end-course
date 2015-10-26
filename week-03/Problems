@@ -165,7 +165,44 @@ console.log(total);
 var add5 = add(5);
 var sum = add5(10); // returns: 15
 
+______________________________________________________________
 
+
+Explain why undefined is logged and how to get the actual message logged:
+
+var message = (function () {
+  var message = 'Welcome';
+
+  function getMessage(message) {
+    return message;
+  }
+
+  return {
+    getMessage: getMessage
+  };
+})();
+
+console.log(message.getMessage());
+
+______________________________________________________________
+
+
+Write mergeArrays function:
+
+mergeArrays([1,2,3], ['a', 'b', 'c']); // returns [[1, a], [2, b], [3, c]];
+
+newArray=[];
+function mergeArrays(a1,b1){
+  for (var i=0;i<a1.length;i++){
+    var k = a1[i];
+    var l = b1[i];
+    console.log(a1[i],b1[i]);
+    newArray.push([k,l]);    
+  }
+  console.log(newArray);
+}
+
+mergeArrays(['a','b','c'],[1,2,3]);
 ______________________________________________________________
 
 Given this HTML, add first class to the first element in the list and last class to the last element in the list:
