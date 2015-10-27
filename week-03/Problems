@@ -220,6 +220,7 @@ var newArray=[];
     newArray.push([a1[i],b1[i]]);    
   }
   console.log(newArray);
+  return(newArray);
 }
 
 mergeArrays(['a','b','c'],[1,2,3]);
