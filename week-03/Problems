@@ -214,13 +214,10 @@ Write mergeArrays function:
 
 mergeArrays([1,2,3], ['a', 'b', 'c']); // returns [[1, a], [2, b], [3, c]];
 
-newArray=[];
 function mergeArrays(a1,b1){
+var newArray=[];
   for (var i=0;i<a1.length;i++){
-    var k = a1[i];
-    var l = b1[i];
-    console.log(a1[i],b1[i]);
-    newArray.push([k,l]);    
+    newArray.push([a1[i],b1[i]]);    
   }
   console.log(newArray);
 }
