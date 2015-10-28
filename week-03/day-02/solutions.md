@@ -102,7 +102,7 @@ ____________________________________________________________________________
 
 Build the content of <body></body> tag with JavaScript only: http://jsbin.com/tomita/edit?html,output
 
-
+See shard-dom.html
 __________________________________________________________________________________
 
 4. Create a function that can remember data, but without having to use global variables and without resending the same data with each function call.
@@ -128,7 +128,7 @@ _______________________________________________________________________________
 Implement a function that will recursively traverse an array and return a string of the array values, in reverse order.
 
 How to test
-console.log(text);
+
 
 function traverse(myArray){
 
@@ -138,4 +138,22 @@ for (var counter=myArray.length - 1;counter<0;counter=counter-1){
 }
 var array = ['London', 'Paris', 'Tokyo'];
 var text = reverseArray(array, array.length, '');
+
+console.log(text);
+
+
+ANSWER:
+function reverseArray(myArray){
+var newArray=[];
+  for (var counter=0;counter<myArray.length;counter++){
+    newArray[counter]=myArray[myArray.length-counter-1];
+ 
+	console.log(newArray[counter]);
+    console.log(newArray);
+  
+  }
+}
+var array = ['London', 'Paris', 'Tokyo','New York','Prague','Rome'];
+
+reverseArray(array);
 
