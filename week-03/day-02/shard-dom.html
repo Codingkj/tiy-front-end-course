@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>The Shard</title>
+  <style>
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,300italic,300,700,700italic);
+    
+    * {
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+    h1 {
+      font-weight: 500;
+    }
+    img {
+      height: 400px;
+      float: left;
+      margin: 0 10px 0 0;
+    }
+    
+    .fact {
+      background-color: yellow;
+    }
+    
+    footer {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      }
+  </style>
+  
+   <script>
+        setTimeout(function () {
+           
+    var head1 = document.createElement("h1");                        
+    var text1 = document.createTextNode("The Modified Shard");   
+    head1.appendChild(text1);                                        
+    document.body.appendChild(head1);   
+          
+    var head2 = document.createElement("h2");                        
+    var text2 = document.createTextNode("The tallest building in Eastern Europe.");   
+    head2.appendChild(text2);                                        
+    document.body.appendChild(head2);  
+          
+    var img1 = document.createElement("img"); 
+    var attr = document.createAttribute("src");
+    attr.nodeValue = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/The_Shard_from_the_Sky_Garden_2015.jpg/480px-The_Shard_from_the_Sky_Garden_2015.jpg" ;
+       img1.setAttributeNode(attr);
+        document.body.appendChild(img1);    
+   
+          
+    var ptext1 = document.createElement("p");                        
+    var text3 = document.createTextNode("The Shard, also referred to as the Shard of Glass, Shard London Bridge and formerly London Bridge Tower, is an 95-storey skyscraper in Southwark, London, that forms part of the London Bridge Quarter development. "); 
+     ptext1.appendChild(text3);                                       
+    var span1 = document.createElement("span"); 
+    var text4 = document.createTextNode("The Shard's construction began in March 2009 ");   
+    span1.appendChild(text4); 
+    span1.setAttribute('class', 'fact');
+          ptext1.appendChild(span1); 
+    var text5 = document.createTextNode("; it was topped out on 30 March 2012 and inaugurated on 6 July 2012. Practical completion was achieved in November 2012. The tower's privately operated observation deck, the View from the Shard, was opened to the public on ");
+          ptext1.appendChild(text5);
+    var ptext3 = document.createElement("strong");                        
+    var text6 = document.createTextNode("1 February 2013");   
+    ptext3.appendChild(text6);  
+          ptext1.appendChild(ptext3);
+    var text7 = document.createTextNode(".");
+          ptext1.appendChild(text7);
+    document.body.appendChild(ptext1); 
+      
+    var mtp = document.createElement("p");
+    document.body.appendChild(mtp);      
+    var span2 = document.createElement("span");                        
+    var text8 = document.createTextNode("Standing 309.6 metres (1,016 ft) high");   
+    span2.appendChild(text8);
+    span2.setAttribute('class', 'fact');
+    document.body.appendChild(span2); 
+                            
+    var text9 = document.createTextNode(", the Shard is currently ");             document.body.appendChild(text9);      
+    
+    var span3 = document.createElement("span");                        
+    var text10 = document.createTextNode("the joint 92nd tallest building in the world ");   
+    span3.appendChild(text10); 
+    span3.setAttribute('class', 'fact');
+    document.body.appendChild(span3); 
+                              
+    var text11 = document.createTextNode("and the fourth tallest building in Europe and the tallest building in the European Union. It is also the second-tallest free-standing structure in the United Kingdom, after the concrete tower at the Emley Moor transmitting station. The glass-clad pyramidal tower has 72 habitable floors, with a viewing gallery and open-air observation deck on the ");                                          
+    document.body.appendChild(text11); 
+       
+    var span4 = document.createElement("span");                        
+    var text12 = document.createTextNode("72nd floor");   
+    span4.appendChild(text12); 
+    span4.setAttribute('class', 'fact');
+    document.body.appendChild(span4);   
+                               
+    var text13 = document.createTextNode(", at a height of ");                   document.body.appendChild(text13);   
+          
+   var span5 = document.createElement("span");                        
+    var text14 = document.createTextNode("244.3 metres (802 ft)");   
+    span5.appendChild(text14); 
+    span5.setAttribute('class', 'fact');
+    document.body.appendChild(span5);  
+                            
+    var text15 = document.createTextNode(". It was designed by the Italian architect Renzo Piano and replaced Southwark Towers, a 24-storey office block built on the site in ");                                          
+    document.body.appendChild(text15);  
+   
+    var span6 = document.createElement("span");                        
+    var text16 = document.createTextNode("1975");   
+    span6.appendChild(text16); 
+    span6.setAttribute('class', 'fact');
+    document.body.appendChild(span6); 
+                                 
+    var text17 = document.createTextNode(". The Shard was developed by Sellar Property Group on behalf of LBQ Ltd, and is jointly owned by Sellar Property and the State of Qatar.");                                      
+    document.body.appendChild(text17);  
+          
+    var listu = document.createElement("ul"); 
+    
+          var listitem1 = document.createElement("li"); 
+          var textline1=document.createTextNode("Cost:")
+          listitem1.appendChild(textline1);
+          var span7 = document.createElement("span");
+          var textline11=document.createTextNode("~435 million");
+          span7.setAttribute('class', 'fact');
+          span7.appendChild(textline11);
+         listitem1.appendChild(span7);
+          
+          var listitem2 = document.createElement("li"); 
+          var textline2=document.createTextNode("Completed:")
+          listitem2.appendChild(textline2);
+          var span8 = document.createElement("span");
+          var textline21=document.createTextNode("July 2012");
+          span8.setAttribute('class', 'fact');
+          span8.appendChild(textline21);
+           listitem2.appendChild(span8);
+          
+          var listitem3 = document.createElement("li"); 
+          var textline3=document.createTextNode("Opening:")
+          listitem3.appendChild(textline3);
+          var span9 = document.createElement("span");
+          var textline31=document.createTextNode("1 February 2013");
+          span9.setAttribute('class', 'fact');
+          span9.appendChild(textline31);
+          listitem3.appendChild(span9);
+          
+    listu.appendChild(listitem1);        
+    listu.appendChild(listitem2);
+    listu.appendChild(listitem3);
+   
+    document.body.appendChild(listu); 
+       
+    var ptext10 = document.createElement("p");                        
+    var text20 = document.createTextNode("Mr Prescott would only approve skyscrapers of exceptional design. For a building of this size to be acceptable, the quality of its design is critical. He is satisfied that the proposed tower is of the highest architectural quality.");   
+    ptext10.appendChild(text20);                                        
+    document.body.appendChild(ptext10); 
+          
+    var ft = document.createElement("footer"); 
+    ft.setAttribute('class', 'footer');    
+    var foottext=document.createElement("p");
+      var textft = document.createTextNode(" Thanks for visiting our website.") 
+     foottext.appendChild(textft);
+     ft.appendChild(foottext);
+     document.body.appendChild(ft);    
+      
+     var ft2 = document.createElement("p");     
+     var foottext2=document.createElement("small");       
+      var textft2 = document.createTextNode("Designed in 2015") 
+     foottext2.appendChild(textft2);
+     ft2.appendChild(foottext2);
+     ft.appendChild(ft2);
+          
+  }, 0);
+    </script>
+  
+  
+</head>
+</body>
+
+</html>
