@@ -198,3 +198,47 @@ var images = [
 ];
 Take a look at window.setInterval() function.
 
+ANSWER:
+_____________________________________________________________________________
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+    .first{
+      background-color:yellow;
+    }
+  </style>
+  <script>
+    setTimeout(function () {
+     
+     var images = [
+  'http://valuestockphoto.com/freehighresimages/roast_veg_DSC2834.jpg',
+  'http://valuestockphoto.com/freehighresimages/snowy_trees1995.jpg',
+  'http://valuestockphoto.com/freehighresimages/nt_alice_springs140362.jpg',
+  'http://valuestockphoto.com/freehighresimages/diwali_deepavali_DSC2292.jpg'];
+      
+   var img1 = document.createElement("img");
+   var src1 = document.createAttribute("src");
+      img1.setAttributeNode(src1); 
+      img1.setAttribute("height","200px");
+      img1.setAttribute("width","200px");
+      img1.setAttribute("float","left");
+      
+    for (var count=0;count<3;count++){  
+      src1.nodeValue = images[count];
+    }
+   
+    
+   document.body.appendChild(img1);
+       
+    }, 0);
+  </script>
+</head>
+<body>
+<p>
+Is it that we are missing something?
+  </p>
+</body>
+</html>
