@@ -1,0 +1,102 @@
+.bottom-half{
+	width:990px;
+	margin:0px;
+	padding: 0px;
+	position:relative;
+}
+
+.bottom-left {
+	width:325px;
+	position: absolute;
+	top:0;
+	height:331px;
+}
+.bottom-middle{
+	width:325px;
+	position: relative;
+	top:0px;
+	margin-left:326px;
+	height:331px;
+} 
+
+.bottom-right1{
+	background-color: #880000;
+	width:325px;
+	position: absolute;
+	top:0px;
+	margin-left:652px;
+	height:240px;
+}
+.bottom-right2{
+	background-color: none;
+	width:325px;
+	margin-top: 0px;
+	margin-left: 652px;
+	height:110px;
+}
+
+.bheader1{
+	text-align: left;
+	color: white;
+	font-style:bold;
+	font-family: ScoutBold, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	border:0;
+	padding:0;
+}
+.bheader2{
+	color: purple;
+	font-style:bold;
+	font-family: ScoutBold, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	border:0;
+	padding:0;
+}
+.bheader3{
+	color: #FF00FF;
+	font-style:bold;
+	font-family: ScoutBold, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	border:0;
+	padding:0;
+}
+.makeup-text {
+	background-color: purple;
+	color: white;
+	width: 100%;
+	position:relative;
+	top:265px;
+}
+strong{
+	font-style: italic;
+	font-weight: 900;
+}
+.jumper-pic{
+	width:50%;
+	float:left;
+}
+.makeup-pic{
+	width:100%;
+	position:absolute;
+	top:0;
+}
+.cleanshirt-pic{
+	width:100%;
+	position:absolute;
+}
+.hairwand-pic{
+	width: 100%;
+}
+.eye-gel-pic{
+	width:50%;
+	float:left;
+	height: 100%;
+}
+p{
+	font-size:13px;
+}
+.rightjust{
+	font-weight: 900;
+	font-size: 13px;
+
+}

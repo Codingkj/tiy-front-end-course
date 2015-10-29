@@ -166,7 +166,7 @@ ANSWER:
       console.log(highElements.length);   
        
       for (var x=0;x<highElements.length;x++){
-        if (x % 2===0){
+        if (x % 2===1){
           console.log(x);
           highElements[x].setAttribute("class","first");
         }
