@@ -211,8 +211,10 @@ _____________________________________________________________________________
     }
   </style>
   <script>
-    setTimeout(function () {
-     
+    
+   
+    setInterval(function(){ 
+  
      var images = [
   'http://valuestockphoto.com/freehighresimages/roast_veg_DSC2834.jpg',
   'http://valuestockphoto.com/freehighresimages/snowy_trees1995.jpg',
@@ -226,14 +228,20 @@ _____________________________________________________________________________
       img1.setAttribute("width","200px");
       img1.setAttribute("float","left");
       
-    for (var count=0;count<3;count++){  
+    for (var count=0;count<4;count++){ 
+      
+      //  var elem = document.QuerySelectorAll("img");
+      
+        //img.parentNode.removeChild(elem);
+     
       src1.nodeValue = images[count];
     }
    
-    
    document.body.appendChild(img1);
        
-    }, 0);
+    }, 2000);
+   
+    
   </script>
 </head>
 <body>
@@ -241,4 +249,5 @@ _____________________________________________________________________________
 Is it that we are missing something?
   </p>
 </body>
+</html>
 </html>
