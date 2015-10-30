@@ -115,7 +115,10 @@ SOLUTION ONE:
         // document.getElementsByTagName('li')[x].parentNode.removeChild;
          document.getElementsByTagName('li')[x].appendChild(frag);
          
-      
+      var item = document.getElementById("").childNodes[0];
+
+
+item.replaceChild(textnode, item.childNodes[0]);
       }
       
        
@@ -212,8 +215,8 @@ _____________________________________________________________________________
   </style>
   <script>
     
-   
-    setInterval(function(){ 
+    setTimeout(function () {
+    
   
      var images = [
   'http://valuestockphoto.com/freehighresimages/roast_veg_DSC2834.jpg',
@@ -227,27 +230,27 @@ _____________________________________________________________________________
       img1.setAttribute("height","200px");
       img1.setAttribute("width","200px");
       img1.setAttribute("float","left");
-      
-    for (var count=0;count<4;count++){ 
-      
-      //  var elem = document.QuerySelectorAll("img");
-      
-        //img.parentNode.removeChild(elem);
+      document.body.appendChild(img1);
+   var count = 0;   
+   var myVar = setInterval(function(){ myTimer() }, 2000); 
      
-      src1.nodeValue = images[count];
-    }
-   
-   document.body.appendChild(img1);
-       
-    }, 2000);
-   
-    
+      
+   function myTimer(){if (count < images.length) {
+          
+          console.log(count);
+          var picked=images[count];
+          img1.setAttribute("src",picked);
+          count=count+1;
+          }
+                     }                 
+               
+  
+      }, 0);
   </script>
 </head>
 <body>
 <p>
-Is it that we are missing something?
+Success!
   </p>
 </body>
-</html>
 </html>
