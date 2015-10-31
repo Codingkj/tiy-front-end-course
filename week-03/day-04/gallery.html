@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!--This one provides touch to zoom-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--link to CSS-->
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+ 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    .selected{
+      border-color: red;
+      border-style: solid;
+      border-width: 0.5vw;
+      margin-right: 0.5vw;
+      width:22vw;
+      height:16vw;
+    }
+    .notselected{
+      margin-right: 0.5vw;
+      border-color: blue;
+      border-style: solid;
+      border-width: 0.6vw;
+      width:23vw;
+      height:16vw;
+    }
+    
+    .topframe-selected{
+      width:93vw;
+      height:38vw;
+      border-color: red;
+      border-style: solid;
+      border-width: 0.5vw;
+
+    }
+    .hover{
+      opacity: 0.3;
+    }
+    .buttleft{
+      float:left;
+      z-index:4;
+    }
+   
+  </style>
+  <script>
+    
+    setTimeout(function () {
+      
+  //   var images = ['../images/nt_alice_springs140362.jpg','../images/snowy_trees1995.jpg',
+  //'../images/nt_alice_springs140362.jpg','../images/snowy_trees1995.jpg'];
+
+    var images = ['../images/golf5.jpg','../images/golf6.jpg','../images/golf7.jpg','../images/golf8.jpg'];
+
+    var divtopframe=document.createElement('div');
+    divtopframe.setAttribute("class","col-sm-12");        
+    document.body.appendChild(divtopframe);
+
+    var buttleft=document.createElement('button');
+    buttleft.setAttribute("class","buttleft");
+    document.body.appendChild(buttleft);
+
+
+    //create imageboxes and content
+
+    var big1 = document.createElement("img");
+    var inBig1 = document.createAttribute("src");
+    var pickbig=images[0];
+    big1.setAttribute("src",pickbig);
+    big1.setAttribute("width","98%");
+    big1.setAttribute("height","73%");
+    big1.setAttribute("class","topframe-selected"); 
+    big1.setAttribute("id","main");
+    divtopframe.appendChild(big1);
+      
+    var thumb1 = document.createElement("img");
+    var inthumb1 = document.createAttribute("src");
+    var pickthumb1=images[0];
+    thumb1.setAttribute("src",pickthumb1);
+    thumb1.setAttribute("class","notselected");
+    thumb1.setAttribute("id","pic1");
+    divtopframe.appendChild(thumb1);
+    
+    var thumb2 = document.createElement("img");
+    var inthumb2 = document.createAttribute("src");
+    var pickthumb2=images[1];
+    thumb2.setAttribute("src",pickthumb2);
+    thumb2.setAttribute("id","pic2");
+    thumb2.setAttribute("class","notselected");
+    divtopframe.appendChild(thumb2);
+      
+    var thumb3 = document.createElement("img");
+    var inthumb3 = document.createAttribute("src");
+    var pickthumb3=images[2];
+    thumb3.setAttribute("src",pickthumb3);
+    thumb3.setAttribute("id","pic3");
+    thumb3.setAttribute("class","notselected");
+    divtopframe.appendChild(thumb3);  
+      
+    var thumb4 = document.createElement("img");
+    var inthumb4 = document.createAttribute("src");
+    var pickthumb4=images[3];
+    thumb4.setAttribute("src",pickthumb4);
+    thumb4.setAttribute("class","notselected");
+    thumb4.setAttribute("id","pic4");
+    divtopframe.appendChild(thumb4);
+   
+    var x = document.getElementsByTagName("img");
+    x.addEventListener("mouseover", myFunction);
+    x.addEventListener("click", mySecondFunction);
+    x.addEventListener("mouseout", myThirdFunction);
+
+
+
+function myFunction() {
+  var arrayofscenes = document.getElementsByTagName("img");
+  for (aa=0;aa<arrayofscenes.length;aa++){
+    console.log("in the loop");
+    var eachscene=arrayofscenes[aa];
+    eachscene.setAttribute("opacity","0.3");
+    
+  }
+}
+
+function mySecondFunction() {
+    document.getElementById("demo").innerHTML += "Clicked!<br>";
+}
+
+function myThirdFunction() {
+    document.getElementById("demo").innerHTML += "Moused out!<br>";
+}
+
+
+      }, 0);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
