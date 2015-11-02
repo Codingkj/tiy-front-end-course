@@ -1,0 +1,275 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Calendar</title>
+    
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>body { 
+    background: #e0e0e0; 
+} 
+ 
+#calmonth { 
+    margin:50px auto; 
+    font: 4vw "Helvetica Neue", Helvetica, Arial; 
+    display:table; 
+   
+}
+#grid {
+    width: 100%;
+  
+border-style: solid;
+border-color: blue;
+}
+
+.rowformat{
+  width:100%;
+  background-color: aqua;
+}
+.cellformat{
+  width:13%;
+  height: 10%;
+  text-align: center;
+  border-color: navy;
+  border-style: solid;
+  font-size: 1.5vw
+}
+.colheadformat{
+  font-family: Arial;
+  font-size: 2vw;
+ text-align: center;
+ border-style: solid;
+ border-color: navy;
+}
+.inactive{
+  border:#C0C0C0 solid;
+}
+.todaysdate{
+  border-color: red;
+  border-style: solid;
+  text-align: center;
+  font-size: 2vw;
+}
+   
+  </style>
+  <script>
+    
+setTimeout(function () {
+
+    var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; 
+      
+    var divtop=document.createElement('div');
+    divtop.setAttribute("class","overallpage");
+    document.body.appendChild(divtop);
+
+    var div1=document.createElement('header');
+    div1.setAttribute("id","calMonth");
+    div1.innerHTML="November 2015";
+    divtop.appendChild(div1);
+
+    var table1=document.createElement("table");
+    table1.setAttribute("id","grid");
+    divtop.appendChild(table1);
+
+    var row1  = table1.insertRow(0);
+    row1.setAttribute("class","rowformat");
+    var row2  = table1.insertRow(1);
+    row1.setAttribute("class","rowformat");
+    var row3  = table1.insertRow(2);
+    row1.setAttribute("class","rowformat");
+    var row4  = table1.insertRow(3);
+    row1.setAttribute("class","rowformat");
+    var row5  = table1.insertRow(4);
+    row1.setAttribute("class","rowformat");
+    var row6  = table1.insertRow(5);
+    row1.setAttribute("class","rowformat");
+    var row7 = table1.insertRow(6);
+    row1.setAttribute("class","rowformat");
+    var row8 = table1.insertRow(7);
+    row1.setAttribute("class","rowformat");
+
+
+
+    var cell1 = row1.insertCell(0);
+    cell1.setAttribute("class","colheadformat");
+    var cell2 = row1.insertCell(1);
+    cell2.setAttribute("class","colheadformat");
+    var cell3 = row1.insertCell(2);
+    cell3.setAttribute("class","colheadformat");
+    var cell4 = row1.insertCell(3);
+    cell4.setAttribute("class","colheadformat");
+    var cell5 = row1.insertCell(4);
+    cell5.setAttribute("class","colheadformat");
+    var cell6 = row1.insertCell(5);
+    cell6.setAttribute("class","colheadformat");
+    var cell7 = row1.insertCell(6);
+    cell7.setAttribute("class","colheadformat");
+  
+    cell1.innerHTML = days[0];
+    cell2.innerHTML = days[1];  
+    cell3.innerHTML = days[2];  
+    cell4.innerHTML = days[3]; 
+    cell5.innerHTML = days[4]; 
+    cell6.innerHTML = days[5]; 
+    cell7.innerHTML = days[6]; 
+
+    var cell8 = row2.insertCell(0);
+    cell8.setAttribute("class","inactive");
+    var cell9 = row2.insertCell(1);
+    cell9.setAttribute("class","inactive");
+    var cell10 = row2.insertCell(2);
+    cell10.setAttribute("class","inactive");
+    var cell11 = row2.insertCell(3);
+    cell11.setAttribute("class","inactive");
+    var cell12 = row2.insertCell(4);
+    cell12.setAttribute("class","inactive");
+    var cell13 = row2.insertCell(5);
+    cell13.setAttribute("class","inactive");
+    var cell14 = row2.insertCell(6);
+    cell14.setAttribute("class","cellformat");
+    cell8.innerHTML = "";
+    cell9.innerHTML = "";  
+    cell10.innerHTML = "";  
+    cell11.innerHTML = "";
+    cell12.innerHTML = "";
+    cell13.innerHTML = "";
+    cell14.innerHTML = "1";
+
+    var cell15 = row3.insertCell(0);
+    cell15.setAttribute("class","cellformat");
+    var cell16 = row3.insertCell(1);
+    cell16.setAttribute("class","cellformat");
+    var cell17 = row3.insertCell(2);
+    cell17.setAttribute("class","cellformat");
+    var cell18 = row3.insertCell(3);
+    cell18.setAttribute("class","cellformat");
+    var cell19 = row3.insertCell(4);
+    cell19.setAttribute("class","cellformat");
+    var cell20 = row3.insertCell(5);
+    cell20.setAttribute("class","cellformat");
+    var cell21 = row3.insertCell(6);
+    cell21.setAttribute("class","cellformat");
+    cell15.innerHTML = "2";
+    cell16.innerHTML = "3";  
+    cell17.innerHTML = "4";  
+    cell18.innerHTML = "5";
+    cell19.innerHTML = "6";
+    cell20.innerHTML = "7";
+    cell21.innerHTML = "8";
+
+    var cell22 = row4.insertCell(0);
+    cell22.setAttribute("class","cellformat");
+    var cell23 = row4.insertCell(1);
+    cell23.setAttribute("class","cellformat");
+    var cell24 = row4.insertCell(2);
+    cell24.setAttribute("class","cellformat");
+    var cell25 = row4.insertCell(3);
+    cell25.setAttribute("class","cellformat");
+    var cell26 = row4.insertCell(4);
+    cell26.setAttribute("class","cellformat");
+    var cell27 = row4.insertCell(5);
+    cell27.setAttribute("class","cellformat");
+    var cell28 = row4.insertCell(6);
+    cell28.setAttribute("class","cellformat");
+    cell22.innerHTML = "9";
+    cell23.innerHTML = "10";  
+    cell24.innerHTML = "11";  
+    cell25.innerHTML = "12";
+    cell26.innerHTML = "13";
+    cell27.innerHTML = "14";
+    cell28.innerHTML = "15";
+
+    var cell29 = row5.insertCell(0);
+    cell29.setAttribute("class","cellformat");
+    var cell30 = row5.insertCell(1);
+    cell30.setAttribute("class","cellformat");
+    var cell31 = row5.insertCell(2);
+    cell31.setAttribute("class","cellformat");
+    var cell32 = row5.insertCell(3);
+    cell32.setAttribute("class","cellformat");
+    var cell33 = row5.insertCell(4);
+    cell33.setAttribute("class","cellformat");
+    var cell34 = row5.insertCell(5);
+    cell34.setAttribute("class","cellformat");
+    var cell35 = row5.insertCell(6);
+    cell35.setAttribute("class","cellformat");
+    cell29.innerHTML = "16";
+    cell30.innerHTML = "17";  
+    cell31.innerHTML = "18";  
+    cell32.innerHTML = "19";
+    cell33.innerHTML = "20";
+    cell34.innerHTML = "21";
+    cell35.innerHTML = "22";
+
+    var cell36 = row6.insertCell(0);
+    cell36.setAttribute("class","cellformat");
+    var cell37 = row6.insertCell(1);
+    cell37.setAttribute("class","cellformat");
+    var cell38 = row6.insertCell(2);
+    cell38.setAttribute("class","cellformat");
+    var cell39 = row6.insertCell(3);
+    cell39.setAttribute("class","cellformat");
+    var cell40 = row6.insertCell(4);
+    cell40.setAttribute("class","cellformat");
+    var cell41 = row6.insertCell(5);
+    cell41.setAttribute("class","cellformat");
+    var cell42 = row6.insertCell(6);
+    cell42.setAttribute("class","cellformat");
+    cell36.innerHTML = "23";
+    cell37.innerHTML = "24";  
+    cell38.innerHTML = "25";  
+    cell39.innerHTML = "26";
+    cell40.innerHTML = "27";
+    cell41.innerHTML = "28";
+    cell42.innerHTML = "29";
+
+    var cell43 = row7.insertCell(0);
+    cell43.setAttribute("class","cellformat");
+    var cell44 = row7.insertCell(1);
+    cell44.setAttribute("class","inactive");
+    var cell45 = row7.insertCell(2);
+    cell45.setAttribute("class","inactive");
+    var cell46 = row7.insertCell(3);
+    cell46.setAttribute("class","inactive");
+    var cell47 = row7.insertCell(4);
+    cell47.setAttribute("class","inactive");
+    var cell48 = row7.insertCell(5);
+    cell48.setAttribute("class","inactive");
+    var cell49 = row7.insertCell(6);
+    cell49.setAttribute("class","inactive");
+    cell43.innerHTML = "30";
+    cell44.innerHTML = "";  
+    cell45.innerHTML = "";  
+    cell46.innerHTML = "";
+    cell47.innerHTML = "";
+    cell48.innerHTML = "";
+    cell49.innerHTML = "";
+
+    var alldates=document.getElementsByClassName("cellformat");  //returns NodeList 
+  
+    var month= "November";  
+    var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; 
+ 
+//find the date today
+    var today = new Date().getDate();
+    var alldates = document.getElementsByClassName("cellformat");
+ //   document.write("my dates are", alldates[0].innerHTML);
+ //   document.write("th today is what type",typeof(today));
+    for (var i=0; i < alldates.length;i++){
+        if (alldates[i].innerHTML == today){
+          var selecteddate = alldates[i];
+          selecteddate.setAttribute("class","todaysdate");
+      }
+    }
+
+
+  }, 0);
+
+  </script>
+</head>
+<body>
+
+</div>
+</body>
+</html>
