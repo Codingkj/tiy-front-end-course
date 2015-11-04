@@ -6,9 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>body { 
-    background: #e0e0e0; 
-} 
+  <style>
  
 #calmonth { 
     margin:50px auto; 
@@ -35,6 +33,9 @@ border-color: blue;
   border-style: solid;
   font-size: 1.5vw
 }
+.cellformat:hover{
+  background-color: gray;
+}
 .colheadformat{
   font-family: Arial;
   font-size: 2vw;
@@ -51,7 +52,55 @@ border-color: blue;
   text-align: center;
   font-size: 2vw;
 }
-   
+.todaysdate:hover{
+background-color: gray;
+}
+.hidden{
+  display:none;
+}
+.visible{
+  display:inline;
+  position:absolute;
+  top:10vw;
+  left:20vw;
+  float:left;
+  border-style: solid;
+  border-color: black;
+  background-color: white;
+  width:40vw;
+  height:20vw;
+}
+.overallpage{
+  z-index:2;
+}
+.textbox{
+  width:30vw;
+  height:10vw;
+  position: relative;
+  top:3vw;
+  left:3vw;
+  float:left;
+}
+#formpage{
+  font-size: 1.5vw
+}
+.submitbutton{
+  position:relative;
+  top:15vw;
+  left:3vw;
+  width:7vw;
+  color:red;
+}
+.cancelbutton{
+  position:relative;
+  top:15vw;
+  left:3vw;
+  width:7vw;
+  color: blue;
+
+}
+.form1{}
+
   </style>
   <script>
     
@@ -88,8 +137,6 @@ setTimeout(function () {
     row1.setAttribute("class","rowformat");
     var row8 = table1.insertRow(7);
     row1.setAttribute("class","rowformat");
-
-
 
     var cell1 = row1.insertCell(0);
     cell1.setAttribute("class","colheadformat");
@@ -250,6 +297,43 @@ setTimeout(function () {
   
     var month= "November";  
     var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; 
+    var dateselected=0;
+
+        var formdiv=document.createElement('div');
+        formdiv.setAttribute("class","hidden form1");
+        formdiv.setAttribute("ID","entireDiv");
+        var taskform = document.createElement('form'); 
+        taskform.setAttribute("ID","formpage");
+    
+        var formheader=document.createTextNode("p");
+        formheader.textContent=" November 2015";
+
+        var textfield=document.createElement("input");
+        textfield.setAttribute("type","text");
+        textfield.setAttribute("name","textfieldname");
+        textfield.setAttribute("class","textbox");
+        var submitfield=document.createElement("button");
+        submitfield.setAttribute("type","submit");
+        submitfield.setAttribute("class","submitbutton");
+        var txt1=document.createTextNode("SUBMIT");
+        submitfield.appendChild(txt1);
+        var cancelfield=document.createElement("button");
+        cancelfield.setAttribute("type","submit");
+        cancelfield.setAttribute("class","cancelbutton");
+        var txt2=document.createTextNode("Cancel");
+   
+       cancelfield.appendChild(txt2);
+        var linebr=document.createElement("br");
+         taskform.appendChild(formheader);
+         taskform.appendChild(linebr);
+        taskform.appendChild(linebr);
+        taskform.appendChild(textfield);
+        taskform.appendChild(linebr);
+        taskform.appendChild(linebr);
+        taskform.appendChild(submitfield);
+        taskform.appendChild(cancelfield);
+        formdiv.appendChild(taskform);
+        document.body.appendChild(formdiv);    
  
 //find the date today
     var today = new Date().getDate();
@@ -263,8 +347,37 @@ setTimeout(function () {
       }
     }
 
+  var taskEntries={};
 
-  }, 0);
+//detect mouse clicks on any date
+var picklist=document.getElementsByClassName("overallpage");
+var target1=picklist[0];
+target1.addEventListener("click", 
+  function(event) {
+  //  var dateCaptured=event.target.textContent;
+    //make the date border green
+    var changeformdiv = document.getElementById("entireDiv").className="form1 visible";
+    var newtext=document.createTextNode(event.target.textContent+" November 2015");
+    taskform.replaceChild(newtext,formheader);
+    
+  });       
+    //if taskEntries for that date is empty follow this for TaskEntry form
+var picklist=document.getElementById("formpage");
+
+picklist.addEventListener("onSubmit", 
+  function(event){
+    event.preventDefault(); 
+    //Get the textarea value
+    var textEntered=document.getElementById("entireDiv").value;
+    
+ //   document.forms["formpage"].elements["textfieldname"].value =""
+    console.log(textEntered);
+
+ //   taskEntries[event.target.textContent]=textfield.value;
+
+  });
+ 
+}, 0);
 
   </script>
 </head>
