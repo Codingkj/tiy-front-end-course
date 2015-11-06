@@ -12,15 +12,16 @@
     margin:50px auto; 
     font: 4vw "Helvetica Neue", Helvetica, Arial; 
     display:table; 
-   
 }
 #grid {
     width: 100%;
-  
 border-style: solid;
 border-color: blue;
 }
-
+.headtext {
+  font: 2vw "Helvetica Neue", Helvetica, Arial; 
+  text-align: center;
+}
 .rowformat{
   width:100%;
   background-color: aqua;
@@ -35,6 +36,9 @@ border-color: blue;
 }
 .cellformat:hover{
   background-color: gray;
+}
+.todaysdate:hover{
+background-color: gray;
 }
 .colheadformat{
   font-family: Arial;
@@ -52,9 +56,7 @@ border-color: blue;
   text-align: center;
   font-size: 2vw;
 }
-.todaysdate:hover{
-background-color: gray;
-}
+
 .hidden{
   display:none;
 }
@@ -62,65 +64,84 @@ background-color: gray;
   display:inline;
   position:absolute;
   top:10vw;
-  left:20vw;
+  left:25vw;
   float:left;
   border-style: solid;
   border-color: black;
   background-color: white;
-  width:40vw;
-  height:20vw;
+  width:45vw;
+  height:25vw;
 }
 .overallpage{
   z-index:2;
 }
 .textbox{
-  width:30vw;
-  height:10vw;
+  width:40vw;
+  height:12vw;
   position: relative;
-  top:3vw;
   left:3vw;
-  float:left;
+  font-size: 1vw;
+  font-family: Arial;
+  margin-bottom: 1vw;
 }
 #formpage{
-  font-size: 1.5vw
+  font-size: 1.5vw;
 }
-.submitbutton{
+#submitbutton{
   position:relative;
-  top:15vw;
-  left:3vw;
+  left:30vw;
+ display:inline;
   width:7vw;
   color:red;
+  height:2vw;
+  margin-top: 1vw;
 }
-.cancelbutton{
+#cancelbutton{
   position:relative;
-  top:15vw;
-  left:10vw;
+  left:2vw;
+  display:inline;
   width:7vw;
   color: blue;
+  height: 2vw;
+  margin-top: 1vw;
 }
-.editbutton{
+#editbutton{
   position:relative;
-  top:15vw;
-  left:3vw;
-  width:7vw;
+  left:13vw;
+  width:8vw;
+  height:2vw;
   color: blue;
+  background-color: gray;
+  top:12vw;
 }
-.closebutton{
+#closebutton{
   position:relative;
-  top:15vw;
-  left:10vw;
-  width:7vw;
+  left:30vw;
+  width:8vw;
+  height:2vw;
   color: green;
-}.removebutton{
+  background-color: gray;
+   top:12vw;
+}#removebutton{
   position:relative;
-  top:15vw;
-  left:17vw;
-  width:7vw;
+  left:-5vw;
+  width:8vw;
+  height: 2vw;
   color: black;
+  background-color: gray;
+   top:12vw;
 }
-.selecteddate{
-  border-color: yellow;
-  border-style: solid;
+
+.taskentry{
+  position: relative;
+  top :5vw;
+  left:5vw;
+}
+.oldtext{
+  margin-left: 2vw;
+  margin-bottom: 0;
+  font-size: 1vw;
+  font-style: italic;
 }
 .form1{}
 .form2{}
@@ -178,14 +199,7 @@ setTimeout(function () {
     cell6.setAttribute("class","colheadformat");
     var cell7 = row1.insertCell(6);
     cell7.setAttribute("class","colheadformat");
-  
-    cell1.innerHTML = days[0];
-    cell2.innerHTML = days[1];  
-    cell3.innerHTML = days[2];  
-    cell4.innerHTML = days[3]; 
-    cell5.innerHTML = days[4]; 
-    cell6.innerHTML = days[5]; 
-    cell7.innerHTML = days[6]; 
+   
 //month cells
     var cell8 = row2.insertCell(0);
     cell8.setAttribute("class","inactive");
@@ -202,14 +216,6 @@ setTimeout(function () {
     var cell14 = row2.insertCell(6);
     cell14.setAttribute("class","cellformat");
     cell14.setAttribute("ID","1");
-    cell8.innerHTML = "";
-    cell9.innerHTML = "";  
-    cell10.innerHTML = "";  
-    cell11.innerHTML = "";
-    cell12.innerHTML = "";
-    cell13.innerHTML = "";
-    cell14.innerHTML = "1";
-
     var cell15 = row3.insertCell(0);
     cell15.setAttribute("class","cellformat");
     cell15.setAttribute("ID","2");
@@ -231,14 +237,6 @@ setTimeout(function () {
     var cell21 = row3.insertCell(6);
     cell21.setAttribute("class","cellformat");
     cell21.setAttribute("ID","8");
-    cell15.innerHTML = "2";
-    cell16.innerHTML = "3";  
-    cell17.innerHTML = "4";  
-    cell18.innerHTML = "5";
-    cell19.innerHTML = "6";
-    cell20.innerHTML = "7";
-    cell21.innerHTML = "8";
-
     var cell22 = row4.insertCell(0);
     cell22.setAttribute("class","cellformat");
     cell22.setAttribute("ID","9");
@@ -260,14 +258,6 @@ setTimeout(function () {
     var cell28 = row4.insertCell(6);
     cell28.setAttribute("class","cellformat");
     cell28.setAttribute("ID","15");
-    cell22.innerHTML = "9";
-    cell23.innerHTML = "10";  
-    cell24.innerHTML = "11";  
-    cell25.innerHTML = "12";
-    cell26.innerHTML = "13";
-    cell27.innerHTML = "14";
-    cell28.innerHTML = "15";
-
     var cell29 = row5.insertCell(0);
     cell29.setAttribute("class","cellformat");
     cell29.setAttribute("ID","16");
@@ -289,14 +279,6 @@ setTimeout(function () {
     var cell35 = row5.insertCell(6);
     cell35.setAttribute("class","cellformat");
     cell35.setAttribute("ID","22");
-    cell29.innerHTML = "16";
-    cell30.innerHTML = "17";  
-    cell31.innerHTML = "18";  
-    cell32.innerHTML = "19";
-    cell33.innerHTML = "20";
-    cell34.innerHTML = "21";
-    cell35.innerHTML = "22";
-
     var cell36 = row6.insertCell(0);
     cell36.setAttribute("class","cellformat");
     cell36.setAttribute("ID","23");
@@ -318,14 +300,6 @@ setTimeout(function () {
     var cell42 = row6.insertCell(6);
     cell42.setAttribute("class","cellformat");
     cell42.setAttribute("ID","29");
-    cell36.innerHTML = "23";
-    cell37.innerHTML = "24";  
-    cell38.innerHTML = "25";  
-    cell39.innerHTML = "26";
-    cell40.innerHTML = "27";
-    cell41.innerHTML = "28";
-    cell42.innerHTML = "29";
-
     var cell43 = row7.insertCell(0);
     cell43.setAttribute("class","cellformat");
     cell43.setAttribute("ID","30");
@@ -343,6 +317,49 @@ setTimeout(function () {
     cell48.setAttribute("class","inactive");
     var cell49 = row7.insertCell(6);
     cell49.setAttribute("class","inactive");
+    
+    cell1.innerHTML = days[0];
+    cell2.innerHTML = days[1];  
+    cell3.innerHTML = days[2];  
+    cell4.innerHTML = days[3]; 
+    cell5.innerHTML = days[4]; 
+    cell6.innerHTML = days[5]; 
+    cell7.innerHTML = days[6]; 
+    cell8.innerHTML = "";
+    cell9.innerHTML = "";  
+    cell10.innerHTML = "";  
+    cell11.innerHTML = "";
+    cell12.innerHTML = "";
+    cell13.innerHTML = "";
+    cell14.innerHTML = "1";
+    cell15.innerHTML = "2";
+    cell16.innerHTML = "3";  
+    cell17.innerHTML = "4";  
+    cell18.innerHTML = "5";
+    cell19.innerHTML = "6";
+    cell20.innerHTML = "7";
+    cell21.innerHTML = "8";
+    cell22.innerHTML = "9";
+    cell23.innerHTML = "10";  
+    cell24.innerHTML = "11";  
+    cell25.innerHTML = "12";
+    cell26.innerHTML = "13";
+    cell27.innerHTML = "14";
+    cell28.innerHTML = "15";
+    cell29.innerHTML = "16";
+    cell30.innerHTML = "17";  
+    cell31.innerHTML = "18";  
+    cell32.innerHTML = "19";
+    cell33.innerHTML = "20";
+    cell34.innerHTML = "21";
+    cell35.innerHTML = "22";
+    cell36.innerHTML = "23";
+    cell37.innerHTML = "24";  
+    cell38.innerHTML = "25";  
+    cell39.innerHTML = "26";
+    cell40.innerHTML = "27";
+    cell41.innerHTML = "28";
+    cell42.innerHTML = "29";
     cell43.innerHTML = "30";
     cell44.innerHTML = "";  
     cell45.innerHTML = "";  
@@ -358,35 +375,37 @@ setTimeout(function () {
         var formdiv=document.createElement('div');
         formdiv.setAttribute("class","hidden form1");
         formdiv.setAttribute("ID","entireDiv");
+
         var taskform = document.createElement('form'); 
         taskform.setAttribute("ID","formpage");
     
-        var formheader=document.createTextNode("p");
-        formheader.textContent=" November 2015";
+        var formheader=document.createElement("p");
+        formheader.textContent=" placeholder";
+        formheader.setAttribute("class","headtext")
 
-        var textfield=document.createElement("input");
-        textfield.setAttribute("type","textarea");
+        var textfield=document.createElement("textarea");
         textfield.setAttribute("form","formpage");
         textfield.setAttribute("ID","taskWords");
         textfield.setAttribute("name","textfieldname");
         textfield.setAttribute("class","textbox");
+
+        var textentry1=document.createElement("textarea");
+        textentry1.setAttribute("rows","10");
+        textfield.appendChild(textentry1);
+        
+        var cancelfield=document.createElement("button");
+        cancelfield.setAttribute("type","button");
+        cancelfield.setAttribute("ID","cancelbutton")
+        var txt2=document.createTextNode("CANCEL");
+        cancelfield.appendChild(txt2);
+
         var submitfield=document.createElement("button");
-        submitfield.setAttribute("type","button");
-   //     submitfield.setAttribute("class","submitbutton");
         submitfield.setAttribute("ID","submitbutton")
         var txt1=document.createTextNode("SUBMIT");
         submitfield.appendChild(txt1);
-        var cancelfield=document.createElement("button");
-        cancelfield.setAttribute("type","button");
-   //     cancelfield.setAttribute("class","cancelbutton");
-        cancelfield.setAttribute("ID","cancelbutton")
-        var txt2=document.createTextNode("Cancel");
-   
-       cancelfield.appendChild(txt2);
+        
         var linebr=document.createElement("br");
          taskform.appendChild(formheader);
-         taskform.appendChild(linebr);
-        taskform.appendChild(linebr);
         taskform.appendChild(textfield);
         taskform.appendChild(linebr);
         taskform.appendChild(linebr);
@@ -402,30 +421,31 @@ setTimeout(function () {
         var secondtaskform = document.createElement('form'); 
         secondtaskform.setAttribute("ID","secondformpage");
     
-        var secondformheader=document.createTextNode("p");
+        var secondformheader=document.createElement("p");
         secondformheader.textContent=" November 2015 Task Data";
+        secondformheader.setAttribute("class", "headtext");
+        secondformheader.setAttribute("ID","headtext2");
 
-        var secondtextfield=document.createTextNode("p");
-       // secondtextfield.setAttribute("form","secondformpage");
-      //  secondtextfield.setAttribute("ID","secondtaskWords");
-      //  secondtextfield.setAttribute("name","secondtextfieldname");
-     //   secondtextfield.setAttribute("class","textbox");
+
+        var secondtextfield=document.createElement("p");
+        secondtextfield.setAttribute("class","oldtext");
+        secondtextfield.setAttribute("ID","oldtextId");
         
-        var secondsubmitfield=document.createElement("button");
-        secondsubmitfield.setAttribute("type","button");
-        secondsubmitfield.setAttribute("class","closebutton");
+        var closefield=document.createElement("button");
+        closefield.setAttribute("type","button");
+        closefield.setAttribute("ID","closebutton");
         var secondtxt1=document.createTextNode("Close");
-        secondsubmitfield.appendChild(secondtxt1);
+        closefield.appendChild(secondtxt1);
         
         var editfield=document.createElement("button");
         editfield.setAttribute("type","button");
-        editfield.setAttribute("class","editbutton");
+        editfield.setAttribute("ID","editbutton");
         var secondtxt2=document.createTextNode("Edit");
         
         var removefield=document.createElement("button");
         removefield.setAttribute("type","button");
-        removefield.setAttribute("class","removebutton");
-        var removetxt3=document.createTextNode("Remove");
+        removefield.setAttribute("ID","removebutton");
+        var removetxt3=document.createTextNode("Remove Task");
         
         var linebr=document.createElement("br");  
         editfield.appendChild(secondtxt2);
@@ -436,8 +456,7 @@ setTimeout(function () {
         secondtaskform.appendChild(linebr);
         secondtaskform.appendChild(secondtextfield);
         secondtaskform.appendChild(linebr);
-        secondtaskform.appendChild(linebr);
-        secondtaskform.appendChild(secondsubmitfield);
+        secondtaskform.appendChild(closefield);
         secondtaskform.appendChild(editfield);
         secondtaskform.appendChild(removefield);
         secondformdiv.appendChild(secondtaskform);
@@ -454,74 +473,141 @@ setTimeout(function () {
     }
   
   
-  var taskEntries={
-    1:"",
-    2:"",
-    3:"",
-    4:"",
-    5:"",
-    6:"",
-    7:"",
-    8:"",
-    9:"",
-    10:"" };
- //   for (var x=0;x<31;x++){
-  //    taskEntries[x] ="";
-    
-//}
+  var taskEntries={};
+//initialise object
+  for (var x=0;x<31;x++){
+      taskEntries[x]="";}
 
 
 var picklist1=document.getElementsByClassName("overallpage");
 var target1=picklist1[0];
-console.log("The target is",target1);
+
 target1.addEventListener("click", 
   function(event) {
+
     dateselected=event.target.textContent;
     console.log([dateselected]);
     //check if date has no entry in object choose form1 else form 2
     if (taskEntries[dateselected] === ""){
       var changeformdiv = document.getElementById("entireDiv").className="form1 visible";
-      var newtext=document.createTextNode(dateselected+" November 2015");
-      taskform.replaceChild(newtext, formheader);
+
+      var textholder=document.getElementsByTagName("p");
+      textholder[0].innerHTML=dateselected+" November 2015";
 
       var changedDate=document.getElementById(dateselected);
       changedDate.setAttribute("style","background-color: aqua;");
       }
     else {
-      var changeformdiv = document.getElementById("entireDiv").className="form2 visible";
-      var newtext=document.createTextNode(dateselected+" November 2015");
-      secondtaskform.replaceChild(newtext, secondformheader);
+//make second form visible
+      var changeformdiv = document.getElementById("secondFormDiv").className="form2 visible";
+     //add the header in 
+     document.getElementById('headtext2').value=dateselected+" November 2015";
+      //get existing task from storage
+      var existing =taskEntries[dateselected];
+      document.getElementById('oldtextId').textContent = existing;
+
+      console.log("Existing value is...",existing);
+
+  //    var textholder=document.getElementsByTagName("textarea");
+      // dont know why this is here..
+      
     } 
   });      
 
-
+  //****SUBMIT BUTTON
 var picklist4=document.getElementById("submitbutton");
 picklist4.addEventListener("click", 
   function(event){
     event.preventDefault(); 
-//write the results
-    
+//write the results    
     var textEntered=document.getElementById("taskWords").value;  //works
     console.log("Text Entered is now...",textEntered);
-     taskEntries.dateselected=textEntered;
-//make the form invisible
-     var changeformdiv = document.getElementById("entireDiv").className="form1 hidden";
-
+    if (textEntered===""){
+      alert('Hey, enter something before you submit - or press Cancel');   
+    }
+    taskEntries[dateselected]=textEntered;
+    console.log("Taskentries are now",taskEntries);
+//make the form invisible 
+    var changeformdiv = document.getElementById("entireDiv").className="form1 hidden";
+    if (taskEntries[dateselected] !== "") {
+// if there was something entered, make sure the date with text entered is now highlighted blue.
      var changedDate=document.getElementById(dateselected);
       changedDate.setAttribute("style","background-color: aqua;");
+    }
+//empty the textbox
+      console.log("textfieldvalue from submit button is..",textfield.value);
+     textfield.value="";
+// change the dateselected back to nothing
+   selecteddate="";
+  });  
+
+//***** CANCEL BUTTON
+  var picklist5=document.getElementById("cancelbutton");
+  picklist5.addEventListener("click", 
+  function(event){
+    event.preventDefault();    //empty the textfield
+        console.log("textfieldvalue is..",textfield.value);
+        textfield.value="";
+                              // hide the form
+    var changeformdiv = document.getElementById("entireDiv").className="form1 hidden";  
+                              //eturn the highlighting off
+    if (taskEntries[dateselected] !== ""){
+    var changedDate=document.getElementById(dateselected);
+    changedDate.setAttribute("style","background-color: none;");
+    }
+  selecteddate="";
     
   });    
- var picklist5=document.getElementById("cancelbutton");
-picklist5.addEventListener("click", 
+
+//** FORM2 BUTTON CLOSE
+  var picklist6=document.getElementById("closebutton");
+  picklist6.addEventListener("click", 
   function(event){
     event.preventDefault(); 
+    event.stopPropagation;
+   
+    //cancel form = delete text, turn to hidden, and empty textbox
+        taskEntries.dateselected="";  
+        var changeformdiv = document.getElementById("secondFormDiv").className="form2 hidden";  
+        var changedDate=document.getElementById(dateselected);
+        changedDate.setAttribute("style","background-color: aqua;");
+        selecteddate="";
+  });    
+//
+
+//*****  FORM2 EDIT BUTTON
+
+//if clicked hide this form2 and bring up form 1.
+  var picklist7=document.getElementById("editbutton");
+  picklist7.addEventListener("click", 
+  function(event){
+    event.preventDefault();
+    event.stopPropagation;   //make the form2 visible
+    var changeformdiv = document.getElementById("entireDiv").className="form1 visible";
+                              //hide form 1
+    var changeform2 = document.getElementById("secondFormDiv").className="form2 hidden";                   
+  //get text from object and put into text area.
+    var existing =taskEntries[dateselected];
+    console.log("existing is....",existing);
+      
+//now where to put it?
+  }); 
+
+//*** FORM2 REMOVE BUTTON
+
+  var picklist8=document.getElementById("removebutton");
+picklist8.addEventListener("click", 
+  function(event){
+    event.preventDefault(); 
+    event.stopPropagation;
+     var changedDate=document.getElementById(dateselected);
+      changedDate.setAttribute("style","background-color: none;");
     var textEntered=document.forms["formpage"].textfieldname.value;
     //cancel form - turn to hidden, and empty textbox
-    textEntered="";  //does not work
-    var changeformdiv = document.getElementById("formpage").className="form1 hidden";
-    var changedDate=document.getElementById(dateselected);
-      changedDate.setAttribute("style","background-color: aqua;");
-  });    
+    textEntered="";  
+    var changeformdiv = document.getElementById("formpage").className="form1 visible";  
+    changeformdiv.className="form2 hidden";
+  });       
 
  
 }, 0);
