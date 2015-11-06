@@ -28,7 +28,7 @@ border-color: blue;
 }
 .cellformat{
   width:13%;
-  height: 10%;
+  padding:1.5vw;
   text-align: center;
   border-color: navy;
   border-style: solid;
@@ -325,12 +325,7 @@ setTimeout(function () {
     cell5.innerHTML = days[4]; 
     cell6.innerHTML = days[5]; 
     cell7.innerHTML = days[6]; 
-    cell8.innerHTML = "";
-    cell9.innerHTML = "";  
-    cell10.innerHTML = "";  
-    cell11.innerHTML = "";
-    cell12.innerHTML = "";
-    cell13.innerHTML = "";
+
     cell14.innerHTML = "1";
     cell15.innerHTML = "2";
     cell16.innerHTML = "3";  
@@ -361,12 +356,7 @@ setTimeout(function () {
     cell41.innerHTML = "28";
     cell42.innerHTML = "29";
     cell43.innerHTML = "30";
-    cell44.innerHTML = "";  
-    cell45.innerHTML = "";  
-    cell46.innerHTML = "";
-    cell47.innerHTML = "";
-    cell48.innerHTML = "";
-    cell49.innerHTML = "";
+  
 
     //var alldates=document.getElementsByClassName("cellformat");  //returns NodeList 
   
@@ -381,7 +371,11 @@ setTimeout(function () {
     
         var formheader=document.createElement("p");
         formheader.textContent=" placeholder";
-        formheader.setAttribute("class","headtext")
+        formheader.setAttribute("class","headtext");
+
+    //    var formheader=document.createElement("p");
+    //    formheader.textContent=" placeholder";
+    //    formheader.setAttribute("class","headtext")
 
         var textfield=document.createElement("textarea");
         textfield.setAttribute("form","formpage");
@@ -389,9 +383,9 @@ setTimeout(function () {
         textfield.setAttribute("name","textfieldname");
         textfield.setAttribute("class","textbox");
 
-        var textentry1=document.createElement("textarea");
-        textentry1.setAttribute("rows","10");
-        textfield.appendChild(textentry1);
+    //    var textentry1=document.createElement("p");
+     //   textentry1.setAttribute("rows","10");
+      //  textfield.appendChild(textentry1);
         
         var cancelfield=document.createElement("button");
         cancelfield.setAttribute("type","button");
@@ -401,7 +395,7 @@ setTimeout(function () {
 
         var submitfield=document.createElement("button");
         submitfield.setAttribute("ID","submitbutton")
-        var txt1=document.createTextNode("SUBMIT");
+        var txt1=document.createTextNode("SAVE");
         submitfield.appendChild(txt1);
         
         var linebr=document.createElement("br");
@@ -501,7 +495,7 @@ target1.addEventListener("click",
 //make second form visible
       var changeformdiv = document.getElementById("secondFormDiv").className="form2 visible";
      //add the header in 
-     document.getElementById('headtext2').value=dateselected+" November 2015";
+     document.getElementById('headtext2').textContent=dateselected+" November 2015";
       //get existing task from storage
       var existing =taskEntries[dateselected];
       document.getElementById('oldtextId').textContent = existing;
@@ -519,6 +513,7 @@ var picklist4=document.getElementById("submitbutton");
 picklist4.addEventListener("click", 
   function(event){
     event.preventDefault(); 
+    event.stopPropagation();
 //write the results    
     var textEntered=document.getElementById("taskWords").value;  //works
     console.log("Text Entered is now...",textEntered);
@@ -545,16 +540,17 @@ picklist4.addEventListener("click",
   var picklist5=document.getElementById("cancelbutton");
   picklist5.addEventListener("click", 
   function(event){
-    event.preventDefault();    //empty the textfield
+    event.preventDefault(); 
+    event.stopPropagation();   //empty the textfield
         console.log("textfieldvalue is..",textfield.value);
         textfield.value="";
                               // hide the form
     var changeformdiv = document.getElementById("entireDiv").className="form1 hidden";  
-                              //eturn the highlighting off
-    if (taskEntries[dateselected] !== ""){
+                              //return the highlighting off
+   
     var changedDate=document.getElementById(dateselected);
     changedDate.setAttribute("style","background-color: none;");
-    }
+    
   selecteddate="";
     
   });    
@@ -564,7 +560,7 @@ picklist4.addEventListener("click",
   picklist6.addEventListener("click", 
   function(event){
     event.preventDefault(); 
-    event.stopPropagation;
+    event.stopPropagation();
    
     //cancel form = delete text, turn to hidden, and empty textbox
         taskEntries.dateselected="";  
@@ -582,13 +578,14 @@ picklist4.addEventListener("click",
   picklist7.addEventListener("click", 
   function(event){
     event.preventDefault();
-    event.stopPropagation;   //make the form2 visible
+    event.stopPropagation();   //make the form2 visible
     var changeformdiv = document.getElementById("entireDiv").className="form1 visible";
                               //hide form 1
     var changeform2 = document.getElementById("secondFormDiv").className="form2 hidden";                   
   //get text from object and put into text area.
     var existing =taskEntries[dateselected];
     console.log("existing is....",existing);
+    document.getElementById('headtext2').value=dateselected+" November 2015";
       
 //now where to put it?
   }); 
@@ -599,7 +596,7 @@ picklist4.addEventListener("click",
 picklist8.addEventListener("click", 
   function(event){
     event.preventDefault(); 
-    event.stopPropagation;
+    event.stopPropagation();
      var changedDate=document.getElementById(dateselected);
       changedDate.setAttribute("style","background-color: none;");
     var textEntered=document.forms["formpage"].textfieldname.value;
