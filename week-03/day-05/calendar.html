@@ -40,7 +40,7 @@ border-color: blue;
 .todaysdate:hover{
 background-color: gray;
 }
-.colheadformat{
+.colformat{
   font-family: Arial;
   font-size: 2vw;
  text-align: center;
@@ -159,10 +159,10 @@ setTimeout(function () {
     divtop.setAttribute("class","overallpage");
     document.body.appendChild(divtop);
 
-    var div1=document.createElement('header');
-    div1.setAttribute("id","calMonth");
-    div1.innerHTML="November 2015";
-    divtop.appendChild(div1);
+    var headx =document.createElement('header');
+    headx.setAttribute("id","calMonth");
+    headx.innerHTML="November 2015";
+    divtop.appendChild(headx);
 
     var table1=document.createElement("table");
     table1.setAttribute("id","grid");
@@ -186,19 +186,19 @@ setTimeout(function () {
     row1.setAttribute("class","rowformat");
 //day header cells
     var cell1 = row1.insertCell(0);
-    cell1.setAttribute("class","colheadformat");
+    cell1.setAttribute("class","colformat");
     var cell2 = row1.insertCell(1);
-    cell2.setAttribute("class","colheadformat");
+    cell2.setAttribute("class","colformat");
     var cell3 = row1.insertCell(2);
-    cell3.setAttribute("class","colheadformat");
+    cell3.setAttribute("class","colformat");
     var cell4 = row1.insertCell(3);
-    cell4.setAttribute("class","colheadformat");
+    cell4.setAttribute("class","colformat");
     var cell5 = row1.insertCell(4);
-    cell5.setAttribute("class","colheadformat");
+    cell5.setAttribute("class","colformat");
     var cell6 = row1.insertCell(5);
-    cell6.setAttribute("class","colheadformat");
+    cell6.setAttribute("class","colformat");
     var cell7 = row1.insertCell(6);
-    cell7.setAttribute("class","colheadformat");
+    cell7.setAttribute("class","colformat");
    
 //month cells
     var cell8 = row2.insertCell(0);
@@ -412,6 +412,7 @@ setTimeout(function () {
         var secondformdiv=document.createElement('div');
         secondformdiv.setAttribute("class","hidden form2");
         secondformdiv.setAttribute("ID","secondFormDiv");
+
         var secondtaskform = document.createElement('form'); 
         secondtaskform.setAttribute("ID","secondformpage");
     
@@ -426,18 +427,18 @@ setTimeout(function () {
         secondtextfield.setAttribute("ID","oldtextId");
         
         var closefield=document.createElement("button");
-        closefield.setAttribute("type","button");
+   //     closefield.setAttribute("type","button");
         closefield.setAttribute("ID","closebutton");
         var secondtxt1=document.createTextNode("Close");
         closefield.appendChild(secondtxt1);
         
         var editfield=document.createElement("button");
-        editfield.setAttribute("type","button");
+   //     editfield.setAttribute("type","button");
         editfield.setAttribute("ID","editbutton");
         var secondtxt2=document.createTextNode("Edit");
         
         var removefield=document.createElement("button");
-        removefield.setAttribute("type","button");
+   //     removefield.setAttribute("type","button");
         removefield.setAttribute("ID","removebutton");
         var removetxt3=document.createTextNode("Remove Task");
         
@@ -466,17 +467,15 @@ setTimeout(function () {
       }
     }
   
-  
+  //initialise storage object
   var taskEntries={};
-//initialise object
   for (var x=0;x<31;x++){
       taskEntries[x]="";}
 
 
-var picklist1=document.getElementsByClassName("overallpage");
-var target1=picklist1[0];
+var picklist1=document.getElementById("grid");
 
-target1.addEventListener("click", 
+picklist1.addEventListener("click", 
   function(event) {
 
     dateselected=event.target.textContent;
@@ -578,10 +577,12 @@ picklist4.addEventListener("click",
   picklist7.addEventListener("click", 
   function(event){
     event.preventDefault();
-    event.stopPropagation();   //make the form2 visible
+    event.stopPropagation();   
     var changeformdiv = document.getElementById("entireDiv").className="form1 visible";
                               //hide form 1
-    var changeform2 = document.getElementById("secondFormDiv").className="form2 hidden";                   
+    var changeform2 = document.getElementById("secondFormDiv").className="form2 hidden";                   //assign the right date to the header of the first form.
+    var textholder=document.getElementsByTagName("p");
+    textholder[0].innerHTML=dateselected+" November 2015";
   //get text from object and put into text area.
     var existing =taskEntries[dateselected];
     console.log("existing is....",existing);
@@ -593,17 +594,21 @@ picklist4.addEventListener("click",
 //*** FORM2 REMOVE BUTTON
 
   var picklist8=document.getElementById("removebutton");
-picklist8.addEventListener("click", 
+  picklist8.addEventListener("click", 
   function(event){
     event.preventDefault(); 
     event.stopPropagation();
+    //remove the background shading on main form
      var changedDate=document.getElementById(dateselected);
-      changedDate.setAttribute("style","background-color: none;");
-    var textEntered=document.forms["formpage"].textfieldname.value;
-    //cancel form - turn to hidden, and empty textbox
-    textEntered="";  
-    var changeformdiv = document.getElementById("formpage").className="form1 visible";  
-    changeformdiv.className="form2 hidden";
+     changedDate.setAttribute("style","background-color: none;");
+    // change the current date entry to empty string
+  //  var textEntered=document.forms["secondformpage"].textfieldname.value;
+  //  textEntered="";  
+     console.log("selected date in Remove:", dateselected);
+     taskEntries[dateselected]="";
+    //change form 2 to be hidden.
+    var changeformdiv = document.getElementById("secondFormDiv").className="form2 visible";  
+//    changeformdiv.className="form2 hidden";
   });       
 
  
