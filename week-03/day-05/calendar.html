@@ -6,147 +6,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
- 
-#calmonth { 
-    margin:50px auto; 
-    font: 4vw "Helvetica Neue", Helvetica, Arial; 
-    display:table; 
-}
-#grid {
-    width: 100%;
-border-style: solid;
-border-color: blue;
-}
-.headtext {
-  font: 2vw "Helvetica Neue", Helvetica, Arial; 
-  text-align: center;
-}
-.rowformat{
-  width:100%;
-  background-color: aqua;
-}
-.cellformat{
-  width:13%;
-  padding:1.5vw;
-  text-align: center;
-  border-color: navy;
-  border-style: solid;
-  font-size: 1.5vw
-}
-.cellformat:hover{
-  background-color: gray;
-}
-.todaysdate:hover{
-background-color: gray;
-}
-.colformat{
-  font-family: Arial;
-  font-size: 2vw;
- text-align: center;
- border-style: solid;
- border-color: navy;
-}
-.inactive{
-  border:#C0C0C0 solid;
-}
-.todaysdate{
-  border-color: red;
-  border-style: solid;
-  text-align: center;
-  font-size: 2vw;
-}
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-.hidden{
-  display:none;
-}
-.visible{
-  display:inline;
-  position:absolute;
-  top:10vw;
-  left:25vw;
-  float:left;
-  border-style: solid;
-  border-color: black;
-  background-color: white;
-  width:45vw;
-  height:25vw;
-}
-.overallpage{
-  z-index:2;
-}
-.textbox{
-  width:40vw;
-  height:12vw;
-  position: relative;
-  left:3vw;
-  font-size: 1vw;
-  font-family: Arial;
-  margin-bottom: 1vw;
-}
-#formpage{
-  font-size: 1.5vw;
-}
-#submitbutton{
-  position:relative;
-  left:30vw;
- display:inline;
-  width:7vw;
-  color:red;
-  height:2vw;
-  margin-top: 1vw;
-}
-#cancelbutton{
-  position:relative;
-  left:2vw;
-  display:inline;
-  width:7vw;
-  color: blue;
-  height: 2vw;
-  margin-top: 1vw;
-}
-#editbutton{
-  position:relative;
-  left:13vw;
-  width:8vw;
-  height:2vw;
-  color: blue;
-  background-color: gray;
-  top:12vw;
-}
-#closebutton{
-  position:relative;
-  left:30vw;
-  width:8vw;
-  height:2vw;
-  color: green;
-  background-color: gray;
-   top:12vw;
-}#removebutton{
-  position:relative;
-  left:-5vw;
-  width:8vw;
-  height: 2vw;
-  color: black;
-  background-color: gray;
-   top:12vw;
-}
-
-.taskentry{
-  position: relative;
-  top :5vw;
-  left:5vw;
-}
-.oldtext{
-  margin-left: 2vw;
-  margin-bottom: 0;
-  font-size: 1vw;
-  font-style: italic;
-}
-.form1{}
-.form2{}
-
-  </style>
+  
   <script>
     
 setTimeout(function () {
@@ -429,18 +291,18 @@ setTimeout(function () {
         var closefield=document.createElement("button");
    //     closefield.setAttribute("type","button");
         closefield.setAttribute("ID","closebutton");
-        var secondtxt1=document.createTextNode("Close");
+        var secondtxt1=document.createTextNode("CLOSE");
         closefield.appendChild(secondtxt1);
         
         var editfield=document.createElement("button");
    //     editfield.setAttribute("type","button");
         editfield.setAttribute("ID","editbutton");
-        var secondtxt2=document.createTextNode("Edit");
+        var secondtxt2=document.createTextNode("EDIT");
         
         var removefield=document.createElement("button");
    //     removefield.setAttribute("type","button");
         removefield.setAttribute("ID","removebutton");
-        var removetxt3=document.createTextNode("Remove Task");
+        var removetxt3=document.createTextNode("REMOVE");
         
         var linebr=document.createElement("br");  
         editfield.appendChild(secondtxt2);
@@ -602,12 +464,10 @@ picklist4.addEventListener("click",
      var changedDate=document.getElementById(dateselected);
      changedDate.setAttribute("style","background-color: none;");
     // change the current date entry to empty string
-  //  var textEntered=document.forms["secondformpage"].textfieldname.value;
-  //  textEntered="";  
      console.log("selected date in Remove:", dateselected);
      taskEntries[dateselected]="";
     //change form 2 to be hidden.
-    var changeformdiv = document.getElementById("secondFormDiv").className="form2 visible";  
+    var changeformdiv = document.getElementById("secondFormDiv").className="form2 hidden";  
 //    changeformdiv.className="form2 hidden";
   });       
 

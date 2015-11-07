@@ -1,0 +1,44 @@
+#submitbutton{
+  position:relative;
+  left:30vw;
+ display:inline;
+  width:7vw;
+  color:red;
+  height:2vw;
+  margin-top: 1vw;
+}
+#cancelbutton{
+  position:relative;
+  left:2vw;
+  display:inline;
+  width:7vw;
+  color: blue;
+  height: 2vw;
+  margin-top: 1vw;
+}
+#editbutton{
+  position:relative;
+  left:12vw;
+  width:8vw;
+  height:2vw;
+  color: blue;
+  background-color: #D9D9D9;
+  top:12vw;
+}
+#closebutton{
+  position:relative;
+  left:32vw;
+  width:8vw;
+  height:2vw;
+  color: green;
+  background-color:#D9D9D9;
+   top:12vw;
+}#removebutton{
+  position:relative;
+  left:-8vw;
+  width:8vw;
+  height: 2vw;
+  color: black;
+  background-color: #D9D9D9;
+   top:12vw;
+}

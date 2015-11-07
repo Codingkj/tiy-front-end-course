@@ -1,0 +1,31 @@
+
+$headfont:4vw "Helvetica Neue", Helvetica, Arial;
+
+.oldtext{
+  margin-left: 2vw;
+  margin-bottom: 0;
+  font-size: 1vw;
+  font-style: italic;
+}
+.headtext {
+  font: 2vw "Helvetica Neue", Helvetica, Arial; 
+  text-align: center;
+}
+.todaysdate{
+  border-color: red;
+  border-style: solid;
+  text-align: center;
+  font-size: 2vw;
+}
+.textbox{
+  width:40vw;
+  height:12vw;
+  position: relative;
+  left:3vw;
+  font-size: 1vw;
+  font-family: Arial;
+  margin-bottom: 1vw;
+}
+#formpage{
+  font-size: 1.5vw;
+}
