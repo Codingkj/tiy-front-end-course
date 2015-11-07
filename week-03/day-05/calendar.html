@@ -235,19 +235,11 @@ setTimeout(function () {
         formheader.textContent=" placeholder";
         formheader.setAttribute("class","headtext");
 
-    //    var formheader=document.createElement("p");
-    //    formheader.textContent=" placeholder";
-    //    formheader.setAttribute("class","headtext")
-
         var textfield=document.createElement("textarea");
         textfield.setAttribute("form","formpage");
         textfield.setAttribute("ID","taskWords");
         textfield.setAttribute("name","textfieldname");
         textfield.setAttribute("class","textbox");
-
-    //    var textentry1=document.createElement("p");
-     //   textentry1.setAttribute("rows","10");
-      //  textfield.appendChild(textentry1);
         
         var cancelfield=document.createElement("button");
         cancelfield.setAttribute("type","button");
@@ -261,7 +253,7 @@ setTimeout(function () {
         submitfield.appendChild(txt1);
         
         var linebr=document.createElement("br");
-         taskform.appendChild(formheader);
+        taskform.appendChild(formheader);
         taskform.appendChild(textfield);
         taskform.appendChild(linebr);
         taskform.appendChild(linebr);
@@ -289,18 +281,15 @@ setTimeout(function () {
         secondtextfield.setAttribute("ID","oldtextId");
         
         var closefield=document.createElement("button");
-   //     closefield.setAttribute("type","button");
         closefield.setAttribute("ID","closebutton");
         var secondtxt1=document.createTextNode("CLOSE");
         closefield.appendChild(secondtxt1);
         
         var editfield=document.createElement("button");
-   //     editfield.setAttribute("type","button");
         editfield.setAttribute("ID","editbutton");
         var secondtxt2=document.createTextNode("EDIT");
         
         var removefield=document.createElement("button");
-   //     removefield.setAttribute("type","button");
         removefield.setAttribute("ID","removebutton");
         var removetxt3=document.createTextNode("REMOVE");
         
@@ -329,14 +318,13 @@ setTimeout(function () {
       }
     }
   
-  //initialise storage object
+//initialise storage object
   var taskEntries={};
   for (var x=0;x<31;x++){
       taskEntries[x]="";}
 
 
 var picklist1=document.getElementById("grid");
-
 picklist1.addEventListener("click", 
   function(event) {
 
@@ -362,9 +350,6 @@ picklist1.addEventListener("click",
       document.getElementById('oldtextId').textContent = existing;
 
       console.log("Existing value is...",existing);
-
-  //    var textholder=document.getElementsByTagName("textarea");
-      // dont know why this is here..
       
     } 
   });      
@@ -408,12 +393,9 @@ picklist4.addEventListener("click",
                               // hide the form
     var changeformdiv = document.getElementById("entireDiv").className="form1 hidden";  
                               //return the highlighting off
-   
     var changedDate=document.getElementById(dateselected);
     changedDate.setAttribute("style","background-color: none;");
-    
   selecteddate="";
-    
   });    
 
 //** FORM2 BUTTON CLOSE
@@ -449,9 +431,9 @@ picklist4.addEventListener("click",
     var existing =taskEntries[dateselected];
     console.log("existing is....",existing);
     document.getElementById('headtext2').value=dateselected+" November 2015";
-      
-//now where to put it?
+  
   }); 
+
 
 //*** FORM2 REMOVE BUTTON
 
