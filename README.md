@@ -6,5 +6,5 @@ Week1: HTML, CSS/SASS
 Week2: Flexbox, Bootstrap, responsive design.
 Week3: Javascript and Event Handlers.
 Week4: jQuery, prototypes (for..in loops)
-Week5: Regular Expressions
+Week5: Recursion & Regular Expressions 
 
