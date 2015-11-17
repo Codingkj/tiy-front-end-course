@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XX TestMyMap</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"> </script>
+  <!--jQuery UI and style sheets next 4 lines.  -->
+  <link rel="stylesheet" href="../../jquery-ui-1.11.4/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="../../jquery-ui-1.11.4/jquery-ui.js"></script>
+  <!--<link rel="stylesheet" href="http://code/jquery.com/resources/demos/style.css">
+   
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZgE4487vDwz7ZksO5AAOMqFuuENHT_CY&signed_in=true"
+    //     async defer>
+</script> -->
+
+</head>
+<body>
+ <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true">
+   </script>
+  <script>
+  var klat=0;
+  var klng=0;
+
+$(function(){      //enclose all code in this function 
+   
+      // create the Opening Page
+    $divtop= $('<div></div>').addClass("overallpage");
+    $headx =$('<p></p>').addClass("calMonth").text("TEST MY MAPS 2015"); 
+    $divtop.append($headx);
+    $('body').append($divtop);
+
+ //*** MAP FORM 
+    $mapdiv=$('<div id="map"></div>').addClass("mapstyle");
+    $('body').append($mapdiv);
+ //   
+    $restdiv=$('<div id="restdiv"></div>');
+    $('body').append($restdiv);
+
+    $mapform=$('<form id="mapform"></form>');
+    $restdiv.append($mapform);
+
+    $findbutton=$('<button id="findbutton" type="button">FIND</button>');
+    $pcodelabel=$('<p class="pcode">Enter your Postcode</p>');
+    $postcodebox=('<input type="text" id="postcode"></input>');
+    $mapform.append($pcodelabel).append($postcodebox).append($findbutton);
+ 
+ 
+ // Need to get postcode value from form
+   
+   $( "#findbutton" ).click(function(){
+        event.preventDefault(); 
+        event.stopPropagation();     
+          //reset the date selected
+    console.log("got here!", $('#postcode').val());
+    var search=$('#postcode').val();
+    var url=('http://api.postcodes.io/postcodes/'+ search);
+    console.log("url is...",url);
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', encodeURI(url));
+    xhr.onload = function() {
+        if (xhr.status !== 200) {
+            console.log('Not OK: ' + xhr.status);
+             return;
+        }
+
+        var data = JSON.parse(xhr.responseText);
+        console.log(data.result.admin_district); 
+        console.log(data.result.longitude);
+        console.log(data.result.latitude);  
+        klat= data.result.latitude;
+        klng= data.result.longitude;
+        var mapOptions={ 
+        center:new google.maps.LatLng(klat,klng),
+        zoom:12   };
+
+        var mylatlng = new google.maps.LatLng(klat, klng);
+        console.log("mylatlng", mylatlng);
+        var map= new google.maps.Map(document.getElementById("map"),mapOptions);
+        var marker = new google.maps.Marker({
+                    position:{lat: klat, lng: klng},
+                    map: map,
+                    title: 'Your task is here!',
+                  });    
+        console.log("made it to after marker");
+    };
+    xhr.send();
+
+});
+    
+});
+
+</script>
+
+</body>
+</html>

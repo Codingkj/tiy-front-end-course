@@ -56,12 +56,13 @@
   </style>
   <script>
     
-    setTimeout(function () {
+setTimeout(function () {
       
-  //   var images = ['../images/nt_alice_springs140362.jpg','../images/snowy_trees1995.jpg',
-  //'../images/nt_alice_springs140362.jpg','../images/snowy_trees1995.jpg'];
 
     var images = ['../images/golf5.jpg','../images/golf6.jpg','../images/golf7.jpg','../images/golf8.jpg'];
+
+    var numImages=images.length;
+  //  document.write(numImages);
 
     var divtopframe=document.createElement('div');
     divtopframe.setAttribute("class","col-sm-12");        
@@ -72,7 +73,7 @@
     document.body.appendChild(buttleft);
 
 
-    //create imageboxes and content
+    //create imageboxes and starting position
 
     var big1 = document.createElement("img");
     var inBig1 = document.createAttribute("src");
@@ -115,34 +116,91 @@
     thumb4.setAttribute("class","notselected");
     thumb4.setAttribute("id","pic4");
     divtopframe.appendChild(thumb4);
-   
-    var x = document.getElementsByTagName("img");
-    x.addEventListener("mouseover", myFunction);
-    x.addEventListener("click", mySecondFunction);
-    x.addEventListener("mouseout", myThirdFunction);
+
+    document.body.appendChild(divtopframe);
+   //add event listeners to all img tags
+    var x4 = document.getElementsByTagName("img");
+    x4.addEventListener("mouseover", myFunction );
+    x4.addEventListener("click", mySecondFunction);
+    x4.addEventListener("mouseout", myThirdFunction);
 
 
-
+//when this function is called it knows that an image has had an action but it doesn't know which. So first thing - poll all dof them.
 function myFunction() {
-  var arrayofscenes = document.getElementsByTagName("img");
+  var arrayofscenes = document.getElementsByTagName("src");
   for (aa=0;aa<arrayofscenes.length;aa++){
     console.log("in the loop");
     var eachscene=arrayofscenes[aa];
     eachscene.setAttribute("opacity","0.3");
-    
-  }
+     }
 }
 
 function mySecondFunction() {
-    document.getElementById("demo").innerHTML += "Clicked!<br>";
+ //   document.getElementById("demo").innerHTML += "Clicked!<br>";
 }
 
 function myThirdFunction() {
-    document.getElementById("demo").innerHTML += "Moused out!<br>";
+   // document.getElementById("demo").innerHTML += "Moused out!<br>";
+}
+//create eventllisteners for the left arrow, right arrow and centre figure element.
+function createEventListeners(){
+  var leftarrow = document.getElementById("leftarrow");
+  if (leftarrow.addEventListener{
+    leftarrow.addEventListener("click"),leftArrow,false);
+  } else if (leftarrow.attachEvent){
+  leftarrow.attachEvent("onclick",leftArrow);
+  }
+var rightarrow = document.getElementById("rightarrow");
+  if (rightarrow.addEventListener{
+    rightarrow.addEventListener("click"),rightArrow,false);
+  } else if (rightarrow.attachEvent){
+  rightarrow.attachEvent("onclick",rightArrow);
+  }
+var mainFig =document.getElementsbyTagName("img")[0];  //retrieves the first image
+  if (mainFig.addEventListener){
+  mainFig.addEventListener("click",,false);
+  } else if (mainFig.attachEvent){
+    mainFig.attachEvent("onclick",zoomFig);
+    }
+}
+
+function populateFigures (){
+  var eachbox;
+  for (vari=0;i<4;i++){ 
+    eachbox=document.getElementsbyTagName("img")[i];
+    eachbox.src=images[i];
+  }
 }
 
 
-      }, 0);
+//to move using right arrow
+function rightmove(){
+//get the current image 
+  var mainFig =document.getElementsbyTagName("img")[0];
+  var nextFig = document.getElementsbyTagName("img")[i+1];
+  //set the src of this one to the src of the second image
+  for (var i=0;i<images.length;i++){
+    if photo_order[i]+1===images.length){
+      var mainFig =document.getElementsbyTagName("img")[0];
+      var nextFig = document.getElementsbyTagName("img")[i+1];
+      mainFig.src = nextFig.src;
+    }
+    else{
+    var mainFig =document.getElementsbyTagName("img")[0];
+      mainFig.src = images[1];
+    }
+  }
+}
+
+function leftmove(){
+  for (var i=0;i<arraylength;i++){
+    //have a look at current image
+    currentimg=document.getElementById()
+    big1.src=images[i]-1
+  }
+}
+
+}, 0);
   </script>
 </head>
 <body>

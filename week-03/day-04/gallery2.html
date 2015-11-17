@@ -1,0 +1,320 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!--This one provides touch to zoom-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--link to CSS-->
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+ 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    .selected{
+      border-color: red;
+      border-style: solid;
+      border-width: 0.5vw;
+      width:24%;
+     
+    }
+    .notselected{
+      border-color: blue;
+      border-style: solid;
+      border-width: 0.5vw;   
+      width:24%;
+  
+    }
+    .topframe-selected{
+      width:100%;
+      height:60%;
+      border-color: red;
+      border-style: solid;
+      border-width: 0.5vw;
+      z-index: 1;
+    }
+    .hover{
+      opacity: 0.3;
+    }
+    .buttleft{
+      float:left;
+      z-index:4;
+      color: red; 
+      position:relative;
+      top:20vw;   
+    }
+    .buttright{
+      float: right;
+      z-index: 4;
+      color: red;
+      position:relative;
+      top:20vw; 
+    }
+   
+  </style>
+  <script>
+    
+setTimeout(function () {
+      
+
+    var images = ['../images/golf5.jpg','../images/golf6.jpg','../images/golf7.jpg','../images/golf8.jpg'];
+
+    var numImages=images.length;
+    var imageCounter=0;
+
+    var divtopframe=document.createElement('div');
+    divtopframe.setAttribute("class","col-sm-12");        
+    document.body.appendChild(divtopframe);
+
+//create buttons
+    var buttleft=document.createElement('button');
+    buttleft.setAttribute("class","buttleft");
+    buttleft.setAttribute("type","button");
+    buttleft.setAttribute("ID","btnLeft");
+    var butttext=document.createTextNode('<<< GO LEFT');
+    buttleft.appendChild(butttext);
+    divtopframe.appendChild(buttleft);
+
+    var buttright=document.createElement('button');
+    buttright.setAttribute("class","buttright");
+    var butttext2=document.createTextNode('GO RIGHT >>>');
+    buttright.appendChild(butttext2);
+    buttright.setAttribute("ID","btnRight");
+    divtopframe.appendChild(buttright);
+    //create imageboxes and starting position
+
+    var big1 = document.createElement("img");
+    var inBig1 = document.createAttribute("src");
+    var pickbig=images[0];
+    big1.setAttribute("src",pickbig);
+    big1.setAttribute("width","98%");
+    big1.setAttribute("height","73%");
+    big1.setAttribute("class","topframe-selected"); 
+    big1.setAttribute("id","main");
+    divtopframe.appendChild(big1);
+    
+    var thumb1 = document.createElement("img");
+    var inthumb1 = document.createAttribute("src");
+    var pickthumb1=images[0];
+    thumb1.setAttribute("src",pickthumb1);
+    thumb1.setAttribute("class","selected");
+    thumb1.setAttribute("id","pic1");
+    divtopframe.appendChild(thumb1);
+    
+    var thumb2 = document.createElement("img");
+    var inthumb2 = document.createAttribute("src");
+    var pickthumb2=images[1];
+    thumb2.setAttribute("src",pickthumb2);
+    thumb2.setAttribute("id","pic2");
+    thumb2.setAttribute("class","notselected");
+    divtopframe.appendChild(thumb2);
+      
+    var thumb3 = document.createElement("img");
+    var inthumb3 = document.createAttribute("src");
+    var pickthumb3=images[2];
+    thumb3.setAttribute("src",pickthumb3);
+    thumb3.setAttribute("id","pic3");
+    thumb3.setAttribute("class","notselected");
+    divtopframe.appendChild(thumb3);  
+      
+    var thumb4 = document.createElement("img");
+    var inthumb4 = document.createAttribute("src");
+    var pickthumb4=images[3];
+    thumb4.setAttribute("src",pickthumb4);
+    thumb4.setAttribute("class","notselected");
+    thumb4.setAttribute("id","pic4");
+    divtopframe.appendChild(thumb4);
+
+    document.body.appendChild(divtopframe);
+
+   var x5 = document.getElementById("btnLeft");
+    x5.addEventListener("click", function()
+    {
+      var target = document.getElementById("main").getAttribute("src"); 
+
+      for (i=0;i<images.length;i++){
+  
+        if (target===images[0]){
+          var main1=document.getElementById("main");
+          var nextimg=images[3];
+          main1.setAttribute("src",nextimg);
+       //   return;
+        }
+        else if (images[i] === target)  //if found the current image
+        {
+          var next=i-1;
+          var main1=document.getElementById("main");
+          var nextimg=images[next];
+          main1.setAttribute("src",nextimg);
+        
+         }
+          //now find the thumbnail that should be highlighted.
+        if (pickthumb1 === nextimg){
+         thumb1.setAttribute("class","selected");
+         thumb2.setAttribute("class","notselected");
+         thumb3.setAttribute("class","notselected");
+         thumb4.setAttribute("class","notselected");
+        }
+        else if (pickthumb2 === nextimg){
+          thumb1.setAttribute("class","notselected");
+          thumb2.setAttribute("class","selected");
+          thumb3.setAttribute("class","notselected");
+          thumb4.setAttribute("class","notselected");
+        }
+        else if (pickthumb3 === nextimg){
+          thumb1.setAttribute("class","notselected");
+          thumb2.setAttribute("class","notselected");
+          thumb3.setAttribute("class","selected");
+          thumb4.setAttribute("class","notselected");
+        }
+        else if (pickthumb4 ===nextimg) {
+          thumb1.setAttribute("class","notselected");
+          thumb2.setAttribute("class","notselected");
+          thumb3.setAttribute("class","notselected");
+          thumb4.setAttribute("class","selected");
+        }
+        }
+      
+      return; //stop changing  i value and jump out of loop   
+      
+    });
+  
+    var x6 = document.getElementById("btnRight");
+    x6.addEventListener("click", function()
+    {
+      var target = document.getElementById("main").getAttribute("src"); 
+
+      for (var i=0;i<images.length;i++){
+  
+        if (target===images[3]){
+          var main1=document.getElementById("main");
+          var nextimg=images[0];
+          main1.setAttribute("src",nextimg);
+        }
+        else if (images[i] === target)  //if found the current image
+        {
+          var next=i+1;
+          var main1=document.getElementById("main");
+          var nextimg=images[next];
+          main1.setAttribute("src",nextimg);
+        }    
+      if (pickthumb1 === nextimg){
+         thumb1.setAttribute("class","selected");
+         thumb2.setAttribute("class","notselected");
+         thumb3.setAttribute("class","notselected");
+         thumb4.setAttribute("class","notselected");
+        }
+        else if (pickthumb2 === nextimg){
+          thumb1.setAttribute("class","notselected");
+          thumb2.setAttribute("class","selected");
+          thumb3.setAttribute("class","notselected");
+          thumb4.setAttribute("class","notselected");
+        }
+        else if (pickthumb3 === nextimg){
+          thumb1.setAttribute("class","notselected");
+          thumb2.setAttribute("class","notselected");
+          thumb3.setAttribute("class","selected");
+          thumb4.setAttribute("class","notselected");
+        }
+        else if (pickthumb4 ===nextimg) {
+          thumb1.setAttribute("class","notselected");
+          thumb2.setAttribute("class","notselected");
+          thumb3.setAttribute("class","notselected");
+          thumb4.setAttribute("class","selected");
+        }
+      }
+        return;
+    });
+
+    var x1 = document.getElementById("pic1");
+    x1.addEventListener("click", 
+    function(){
+      var target = document.getElementById("main");
+      target.src = images[0];
+      this.setAttribute("class","selected");
+      var all=document.getElementsByTagName("img");
+      for (var i=1;i<all.length;i++){
+        if (all[i].src === target.src)
+        {
+
+          all[i].setAttribute("class","selected");
+        }  
+         else
+        {
+          all[i].setAttribute("class","notselected");
+        } 
+    }
+    });
+    
+    var x2 = document.getElementById("pic2");
+    x2.addEventListener("click", 
+    function(){
+      var target = document.getElementById("main");
+      target.src = images[1];
+      this.setAttribute("class","selected");
+      var all=document.getElementsByTagName("img");
+      for (var i=1;i<all.length;i++){
+        if (all[i].src === target.src)
+        {
+          all[i].setAttribute("class","selected");
+        }  
+        else
+        {
+          all[i].setAttribute("class","notselected");
+        }
+    }
+    });
+
+    var x3 = document.getElementById("pic3");
+    x3.addEventListener("click", 
+    function(){
+      var target = document.getElementById("main");
+      target.src = images[2];
+      this.setAttribute("class","selected");
+      var all=document.getElementsByTagName("img");
+      for (var i=1;i<all.length;i++){
+        if (all[i].src === target.src)
+        {
+          all[i].setAttribute("class","selected");
+        }  
+        else
+        {
+          all[i].setAttribute("class","notselected");
+        }
+    }
+    });
+
+    var x4 = document.getElementById("pic4");
+    x4.addEventListener("click", 
+    function(){
+      var target = document.getElementById("main");
+      target.src = images[3];
+      this.setAttribute("class","selected");
+      var all=document.getElementsByTagName("img");
+      for (var i=1;i<all.length;i++){
+        if (all[i].src === target.src)
+        {
+          all[i].setAttribute("class","selected");
+        }  
+        else
+        {
+          all[i].setAttribute("class","notselected");
+        }
+    }
+    });
+
+  }, 0);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
