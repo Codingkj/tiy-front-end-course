@@ -1,0 +1,67 @@
+var ApplicationState = (function () {
+  var headerText = 'Loading';
+  
+  function setHeaderText(text) {
+    headerText = text;
+  }
+  
+  function getHeaderText() {
+    return headerText;
+  }
+  
+  return {
+    setHeaderText: setHeaderText,
+    getHeaderText: getHeaderText
+  };
+})();
+
+var ApplicationData = (function () {
+  var CITY_NAME = 'London';
+  var COUNTRY_NAME = 'UK';
+  
+  function getCityName() {
+    return CITY_NAME;
+  }
+  
+  function getCountryName() {
+    return COUNTRY_NAME;
+  }
+  
+  return {
+    getCityName: getCityName,
+    getCountryName: getCountryName
+  };
+})();
+
+var HeaderDOMView = (function () {
+  function setHeaderText(text) {
+    $('h1').text(text);
+  }
+  
+  return {
+    setHeaderText: setHeaderText
+  };
+})();
+
+var FooterDOMView = (function () {
+  function setCityName(name) {
+    $('[data-city-name]').text(name);
+  }
+  
+  function setCoutryName(name) {
+    $('[data-coutry-name]').text(name);
+  }
+  
+  return {
+    setCityName: setCityName,
+    setCountryName: setCountryName
+  };
+})();
+
+$(function () {
+  
+  HeaderDOMView.setHeaderText(ApplicationState.getHeaderText());
+  FooterDOMView.setCityName(ApplicationData.getCityName());
+  FooterDOMView.setCountryName(ApplicationData.getCountryName());
+  
+});

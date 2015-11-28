@@ -1,0 +1,147 @@
+Native Javascript example code.
+
+var div = document.createElement('div');
+var homeButton = document.createElement('button');
+var text = document.createTextNode('HOME');
+homeButton.appendChild(text);
+var productsButton = document.createElement('button');
+var text = document.createTextNode('PRODUCTS');
+productsButton.appendChild(text);
+var aboutButton = document.createElement('button');
+var text = document.createTextNode('ABOUT');
+aboutButton.appendChild(text);
+var search = document.createElement('input');
+search.setAttribute('type', 'search');
+search.setAttribute('placeholder', 'search');
+div.appendChild(homeButton);
+div.appendChild(productsButton);
+div.appendChild(aboutButton);
+div.appendChild(search);
+document.body.appendChild(div);
+
+But how can we shorten this?
+Create a button and apply text happens 3 times.
+
+function createButton(label){
+	var button=document.createElement('button');
+	button.textContent(label);
+	div.appendChild(button);
+	}
+
+	createButton('Home');
+
+	But then we can create a property on an Element that saves even more time.
+
+	Element.prototype.createButton = function createButton(label) {
+	var button =document.createElement('button');
+	button.textContent=label;
+	this.appendChild(button);
+	};
+
+	and call it using div.createButton('HOME');
+
+	_____________________________________________________________________________________________
+	//Harry's library - creates the library
+
+var harry={}
+harry.init = function Init() {
+  Element.prototype.createButton = function createButton(label) {
+  var button = document.createElement('button');
+  button.textContent = label;
+  this.appendChild(button); 
+  };
+
+Element.prototype.createSearch = function createSearch(placeholder) {
+  var search = document.createElement('input');
+  search.setAttribute('type', 'search');
+  search.setAttribute('placeholder', placeholder);
+  this.appendChild(search);
+  };
+};
+harry.destroy=function destroy(){
+  delete Element.prototype.createButton;
+  delete Element.prototype.createSearch;
+};
+
+//Use Harry library 
+
+harry.init();
+
+var div = document.createElement('div');
+
+div.createButton('HOME');
+div.createButton('PRODUCTS');
+div.createButton('ABOUT');
+div.createSearch('Search...');
+document.body.appendChild(div);
+
+harry.destroy();
+
+console.log(Element.prototype.createButton); //this should now return undefined.
+
+//Call create button and pass a string as an argument.
+
+________________________________________________________________________________________________
+
+but perhaps libarary should check whether the Harry name already exists in Global scope (and therefore someone has alrady imported libarary and no need to do it again.)
+
+Use: if Typeof(Harry) === 'undefined', put whole code of Init function in {}
+
+__________________________________________________________________________
+
+but user also needs to know what version of the library is being used.
+
+//Harry's library
+
+Harry.VERSION='0.1'
+
+if (typeof Harry === 'undefined') {
+  
+  console.log('No Harry library found');
+  
+  var Harry = {};
+  Harry.init = function init() {
+      Element.prototype.createButton = function createButton(label) {
+        var button = document.createElement('button');
+        button.textContent = label;
+        this.appendChild(button); 
+      };
+
+      Element.prototype.createSearch = function createSearch(placeholder) {
+        var search = document.createElement('input');
+        search.setAttribute('type', 'search');
+        search.setAttribute('placeholder', placeholder);
+        this.appendChild(search);
+      };
+  };
+
+  Harry.destroy = function destroy() {
+    delete Element.prototype.createButton;
+    delete Element.prototype.createSearch;
+  };
+  
+}
+
+//Use Harry library
+
+Harry.init();
+
+var div = document.createElement('div');
+
+div.createButton('HOME');
+div.createButton('PRODUCTS');
+div.createButton('ABOUT');
+div.createSearch('Search...');
+document.body.appendChild(div);
+
+Harry.destroy();
+
+Harry.getVersion=function getVersion(){
+	return Harry.VERSION;
+}
+
+// console.log(Element.prototype.createSearch);
+
+
+
+

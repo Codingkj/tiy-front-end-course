@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1></h1>
+  <button>I am ready</button>
+  <footer>
+    We're based in 
+    <span data-city-name></span> <span data-country-name></span>.
+   </footer>
+</body>
+</html>
+
+_______ JS part below
+
+
+</scrpt>
+
+var ApplicationState = (function () {
+  var BUTTON_STATES = {
+    'UNPRESSED': 1,
+    'PRESSED': 2,
+    'DISABLED': 3
+  };
+  
+  var headerText = 'Loading';
+  var isButtonClicked = BUTTON_STATES.UNPRESSED;
+  
+  function setHeaderText(text) {
+    headerText = text;
+  }
+  
+  function getHeaderText() {
+    return headerText;
+  }
+  
+  function setIsButtonClicked(isClicked) {
+    if (isClicked) {
+      isButtonClicked = BUTTON_STATES.PRESSED;
+    }
+  }
+  
+  function getIsButtonClicked() {
+    return isButtonClicked;
+  }
+  
+  function getButtonText() {
+    if (isButtonClicked) {
+      return 'Done!';
+    } else {
+      return 'I am ready!';
+    }
+  }
+  
+  return {
+    setHeaderText: setHeaderText,
+    getHeaderText: getHeaderText,
+    getButtonText: getButtonText,
+    setIsButtonClicked: setIsButtonClicked,
+    getIsButtonClicked: getIsButtonClicked
+  };
+})();
+
+var ApplicationData = (function () {
+  var CITY_NAME = 'London';
+  var COUNTRY_NAME = 'UK';
+  
+  function getCityName() {
+    return CITY_NAME;
+  }
+  
+  function getCountryName() {
+    return COUNTRY_NAME;
+  }
+  
+  return {
+    getCityName: getCityName,
+    getCountryName: getCountryName
+  };
+})();
+
+var HeaderDOMView = (function () {
+  function setHeaderText(text) {
+    $('h1').text(text);
+  }
+  
+  return {
+    setHeaderText: setHeaderText
+  };
+})();
+
+var FooterDOMView = (function () {
+  function setCityName(name) {
+    $('[data-city-name]').text(name);
+  }
+  
+  function setCountryName(name) {
+    $('[data-country-name]').text(name);
+  }
+  
+  return {
+    setCityName: setCityName,
+    setCountryName: setCountryName
+  };
+})();
+
+var ButtonDOMView = (function () {
+  
+  function setButtonText(text) {
+    $('button').text(text);
+  }
+  
+  function listenToClick(clickEventHandler) {
+    $('button').on('click', clickEventHandler);
+  }
+  
+  return {
+    setButtonText: setButtonText,
+    listenToClick: listenToClick
+  };
+})();
+
+$(function () {
+  
+  HeaderDOMView.setHeaderText(ApplicationState.getHeaderText());
+  FooterDOMView.setCityName(ApplicationData.getCityName());
+  FooterDOMView.setCountryName(ApplicationData.getCountryName());
+  
+  ButtonDOMView.listenToClick(function () {
+    ApplicationState.setIsButtonClicked(true);
+    ButtonDOMView.setButtonText(ApplicationState.getButtonText());
+  });
+  
+});
+</script>
